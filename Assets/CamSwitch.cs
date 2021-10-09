@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CamSwitch : MonoBehaviour
 {
-    TPController tpControl;
+    
     public GameObject TPCam;
     public GameObject FPCam;
     public bool check;
-    public float mouseSense = 5.0f;
+    
 
 
     public void Start()
