@@ -5,27 +5,43 @@ using UnityEngine;
 public class TPController : MonoBehaviour
 {
 	private float speed = 2.0f;
-	public GameObject Player;
+    public CharacterController controller;
+	public float jumpForce = 5.0f;
+	public bool isOnGround = true;
+	private Rigidbody playerRb;
 	
 
-	public void Update()
+   void Start()
+    {
+		playerRb = GetComponent<Rigidbody>();
+    }
+    public void Update()
 	{
+        // player movement
 
-		if (Input.GetKey(KeyCode.D))
-		{
-			transform.position += Vector3.right * speed * Time.deltaTime;
-		}
-		if (Input.GetKey(KeyCode.A))
-		{
-			transform.position += Vector3.left * speed * Time.deltaTime;
-		}
-		if (Input.GetKey(KeyCode.W))
-		{
-			transform.position += Vector3.forward * speed * Time.deltaTime;
-		}
-		if (Input.GetKey(KeyCode.S))
-		{
-			transform.position += Vector3.back * speed * Time.deltaTime;
-		}
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * speed * Time.deltaTime);
+
+
+        if (Input.GetKey(KeyCode.Space) && isOnGround) //jump
+        {
+			playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+			isOnGround = false;
+        }
+        if (Input.GetKey(KeyCode.C)) // crouch
+        {
+			
+        }
 	}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+			isOnGround = true;
+        }
+    }
 }
