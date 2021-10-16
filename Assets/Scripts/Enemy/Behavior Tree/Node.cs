@@ -7,16 +7,11 @@ public class Node
     public enum NodeOutcome
     {
         SUCCESS,
-        FAIL,
-        RUNNING
+        RUNNING,
+        FAIL
     }
 
     public List<Node> childrenNodes;
-
-    public Node()
-    {
-        childrenNodes = new List<Node>();
-    }
 
     public virtual NodeOutcome Execute(BehaviorTree bt)
     {
