@@ -23,7 +23,7 @@ public class CamSwitch : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (check) // WHEN FIRST PERSON IS ENABLED
+            if (TPCam.activeInHierarchy) // WHEN FIRST PERSON IS ENABLED
             {
                 TPCam.SetActive(false);
                 FPCam.SetActive(true);
@@ -35,6 +35,5 @@ public class CamSwitch : MonoBehaviour
                 FPCam.SetActive(false);
             }
         }
-        check = !check;
     }
 }
