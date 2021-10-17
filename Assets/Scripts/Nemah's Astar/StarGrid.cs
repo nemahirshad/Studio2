@@ -92,7 +92,6 @@ public class StarGrid : MonoBehaviour
 						Gizmos.color = Color.black;
 				Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
 			}
-			Debug.Log(path);
 		}
 	}
 }

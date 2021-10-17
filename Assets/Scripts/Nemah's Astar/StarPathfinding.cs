@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class StarPathfinding : MonoBehaviour
 {
-	public Transform seeker, target;
-	StarGrid grid;
+	public StarGrid grid;
 
 	void Awake()
 	{
 		grid = GetComponent<StarGrid>();
 	}
 
-	void Update()
-	{
-		FindPath(seeker.position, target.position);
-	}
-
-	void FindPath(Vector3 startPos, Vector3 targetPos)
+	public void FindPath(Vector3 startPos, Vector3 targetPos)
 	{
 		StarNode startNode = grid.NodeFromWorldPoint(startPos);
 		StarNode targetNode = grid.NodeFromWorldPoint(targetPos);

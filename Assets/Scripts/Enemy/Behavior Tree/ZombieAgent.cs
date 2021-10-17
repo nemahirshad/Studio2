@@ -4,30 +4,27 @@ using UnityEngine;
 
 public class ZombieAgent : BehaviorTree
 {
+    public Transform point;
+
+    public StarPathfinding astar;
+
+    public StarGrid grid;
+
     public LayerMask enemyLayers;
 
     public float wanderTimer;
+    public float wanderCountdown;
     public float chaseCountdown;
     public float attackCountdown;
     public float attackRange;
     public float speed;
+    public float wanderForce;
 
-    public bool chasing;
+    public bool canFollow;
 
-    public float circleRadius = 1;
-    public float turnChance = 0.05f;
-    public float maxRadius = 5;
+	public int currentIndex;
 
-    public float mass = 15;
-    public float maxSpeed = 3;
-    public float maxForce = 15;
-
-    public Vector3 velocity;
-    public Vector3 wanderForce;
     public Vector3 targetPos;
-
-    Vector2 currentPosition;
-    Vector2 endPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -38,39 +35,38 @@ public class ZombieAgent : BehaviorTree
         rootNode.childrenNodes[0].childrenNodes.Add(new ChaseNode());
         rootNode.childrenNodes[0].childrenNodes.Add(new AttackNode());
 
-        velocity = Random.onUnitSphere;
-        wanderForce = GetRandomWanderForce();
-    }
+		point.position = transform.position + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)) * wanderForce;
+	}
 
     public override void Update()
     {
         rootNode.Execute(this);
+        astar.FindPath(transform.position, point.position);
+
+		wanderCountdown -= Time.deltaTime;
     }
 
-    private Vector3 GetRandomWanderForce()
+    public void FollowPath()
     {
-        Vector3 circleCenter = velocity.normalized;
-        Vector2 randomPoint = Random.insideUnitCircle;
-
-        Vector3 displacement = new Vector3(randomPoint.x, randomPoint.y) * circleRadius;
-        displacement = Quaternion.LookRotation(velocity) * displacement;
-
-        Vector3 wanderForce = circleCenter + displacement;
-        return wanderForce;
-    }
-
-    public Vector3 GetWanderForce()
-    {
-        if (transform.position.magnitude > maxRadius)
+        if (astar.grid.path != null && canFollow)
         {
-            Vector3 directionToCenter = (targetPos - transform.position).normalized;
-            wanderForce = velocity.normalized + directionToCenter;
-        }
-        else if (Random.value < turnChance)
-        {
-            wanderForce = GetRandomWanderForce();
-        }
+            Vector3 waypoint = astar.grid.path[currentIndex].worldPosition;
 
-        return wanderForce;
+            transform.position = Vector3.MoveTowards(transform.position, waypoint, speed * Time.deltaTime);
+
+            Vector3 lookDir = new Vector3(waypoint.x, 0, waypoint.z);
+
+            transform.rotation = Quaternion.LookRotation(lookDir);
+
+            if (Vector3.Distance(waypoint, transform.position) < range)
+            {
+                currentIndex++;
+            }
+
+            if (currentIndex >= astar.grid.path.Count)
+            {
+                canFollow = false;
+            }
+        }
     }
 }

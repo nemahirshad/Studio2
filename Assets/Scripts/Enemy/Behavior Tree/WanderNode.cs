@@ -6,16 +6,14 @@ public class WanderNode : Node
 {
     public override NodeOutcome Execute(BehaviorTree bt)
     {
-        Vector3 desiredVelocity = ((ZombieAgent)bt).GetWanderForce();
-        desiredVelocity = desiredVelocity.normalized * ((ZombieAgent)bt).maxSpeed;
+        if (((ZombieAgent)bt).wanderCountdown <= 0)
+        {
+            ((ZombieAgent)bt).point.position = new Vector3(Random.Range(-1f, 1f), ((ZombieAgent)bt).point.position.y, Random.Range(-1f, 1f)) * ((ZombieAgent)bt).wanderForce;
+            ((ZombieAgent)bt).wanderCountdown = ((ZombieAgent)bt).wanderTimer;
+            ((ZombieAgent)bt).canFollow = true;
+        }
 
-        Vector3 steeringForce = desiredVelocity - ((ZombieAgent)bt).velocity;
-        steeringForce = Vector3.ClampMagnitude(steeringForce, ((ZombieAgent)bt).maxForce);
-        steeringForce /= ((ZombieAgent)bt).mass;
-
-        ((ZombieAgent)bt).velocity = Vector3.ClampMagnitude(((ZombieAgent)bt).velocity + steeringForce, ((ZombieAgent)bt).maxSpeed);
-        ((ZombieAgent)bt).transform.position += ((ZombieAgent)bt).velocity * Time.deltaTime;
-        ((ZombieAgent)bt).transform.forward = ((ZombieAgent)bt).velocity.normalized;
+        ((ZombieAgent)bt).FollowPath();
 
         bt.anim.SetBool("Wandering", true);
         
