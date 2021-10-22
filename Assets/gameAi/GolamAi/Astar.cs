@@ -9,7 +9,7 @@ public class Astar : MonoBehaviour
     public Transform TargetPosition;
     private void Awake()
     {
-        gridReference = GetComponent<Grid>();
+        gridReference = GameObject.FindObjectOfType<Grid>().GetComponent<Grid>();
     }
 
     // Update is called once per frame
@@ -81,7 +81,7 @@ public class Astar : MonoBehaviour
         }
 
         finalPath.Reverse();
-        gridReference.shotestPath = finalPath;
+        gridReference.shortestPath = finalPath;
     }
 
     int getManhattenDistance(Node nodeA, Node nodeB)

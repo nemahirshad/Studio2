@@ -5,6 +5,7 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
     public Transform StartPositon;
+
     public LayerMask WallLayer;
     public Vector2 gridSize;
     public float fNodeRadius;
@@ -13,15 +14,29 @@ public class Grid : MonoBehaviour
     private int gridSizeX, gridSizeY;
 
     Node[,] nodeArray;
-    public List<Node> shotestPath;
+    public List<Node> shortestPath;
 
-    void Start()
+
+    void Update()
     {
         fNodeDiameter = fNodeRadius * 2;
-    gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);
-     gridSizeY = Mathf.RoundToInt(gridSize.y / fNodeDiameter);
+        gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);
+        gridSizeY = Mathf.RoundToInt(gridSize.y / fNodeDiameter);
         createGrid();
+     
         
+    }
+
+    public Vector3 MovementCalc()
+    {
+        if(shortestPath != null)
+        {
+            Vector3 dir = shortestPath[0].worldPosition - StartPositon.position + new Vector3(0, 0.5f, 0);
+            dir.Normalize();
+            return dir;
+        }
+
+        return Vector3.zero;
     }
 
     void createGrid()
@@ -110,14 +125,13 @@ public class Grid : MonoBehaviour
 
         return nodeArray[_x, _y];
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
 
-        if(nodeArray != null)
+        if (nodeArray != null)
         {
-            foreach(Node n in nodeArray)
+            foreach (Node n in nodeArray)
             {
                 if (n.bIsWall)
                 {
@@ -128,10 +142,9 @@ public class Grid : MonoBehaviour
                     Gizmos.color = Color.black;
                 }
 
-
-                if(shotestPath != null)
+                if (shortestPath != null)
                 {
-                    if (shotestPath.Contains(n))
+                    if (shortestPath.Contains(n))
                     {
                         Gizmos.color = Color.green;
                     }
@@ -140,5 +153,4 @@ public class Grid : MonoBehaviour
             }
         }
     }
-
 }

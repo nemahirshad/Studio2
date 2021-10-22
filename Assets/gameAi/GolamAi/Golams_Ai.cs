@@ -19,29 +19,58 @@ public class Golams_Ai : MonoBehaviour
     public Rigidbody rb;
     public GameObject player;
     public float detectionRange;
+    public float chaseRange;
     public float attackRange;
     private State CurrentState; //Local variable that represents our state
+    public Astar astar;
+    public Grid grid;
 
     public void ChangeState(State newState)
     {
         CurrentState = newState;
     }
 
-
-
-  
-   void Start()
+    private void Start()
     {
-        CurrentState = State.Idle;
-       
+        CurrentState = State.Patrol;
+    }
+
+
+    void Update()
+    {
+        
 
             switch (CurrentState)
-            {
-               
-               
-            }
-           
-        
+        {
+            case State.Patrol:
+                Patrol();
+                if (Vector3.Distance(player.transform.position,transform.position) < detectionRange)
+                {
+                    ChangeState(State.Chase);
+                }
+                break;
+            case State.Chase:
+                Chasing();
+                if (Vector3.Distance(player.transform.position, transform.position) > chaseRange)
+                {
+                    ChangeState(State.Patrol);
+                }
+                break;
+        }
+
+        Debug.Log(CurrentState);
+
+
+
+
+
+
+    }
+
+    void getTarget()
+    {
+        target = wayPoints[Random.Range(0,wayPoints.Length)];
+        astar.TargetPosition = target.transform;
     }
 
 
@@ -49,17 +78,14 @@ public class Golams_Ai : MonoBehaviour
     {
         if (!target)
         {
-           // getTarget();
-
+            getTarget();
         }
-        // calculate direction towards the target
-        Vector3 dir = target.transform.position - gameObject.transform.position;
-        // we are normalizing the direction vector, in order to get a unit vector out of the direction where the magnitude is always = 1
-        rb.AddForce(dir.normalized * speed * Time.deltaTime, ForceMode.Impulse);
 
-        if (distanceToTarget() <= 1.5f)
+        rb.AddForce(grid.MovementCalc() * speed * Time.deltaTime, ForceMode.Impulse);
+
+        if (distanceToTarget() <= 2)
         {
-            //getTarget();
+            getTarget();
         }
 
     }
@@ -71,12 +97,19 @@ public class Golams_Ai : MonoBehaviour
 
         public void Chasing()
         {
+            astar.TargetPosition = player.transform;
 
-            Vector3 dir = player.transform.position - gameObject.transform.position;
-            // we are normalizing the direction vector, in order to get a unit vector out of the direction where the magnitude is always = 1
-            rb.AddForce(dir.normalized * speed * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(grid.MovementCalc() * speed * Time.deltaTime, ForceMode.Impulse);
         }
 
-   
-  
+    //private void OnDrawGizmos()
+    //{
+    //    if (target)
+    //    {
+    //        Gizmos.color = Color.blue;
+    //        Gizmos.DrawSphere(target.transform.position, 1f);
+    //    }
+       
+    //}
+
 }
