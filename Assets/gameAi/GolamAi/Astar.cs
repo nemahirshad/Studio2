@@ -20,16 +20,16 @@ public class Astar : MonoBehaviour
 
     void FindPath(Vector3 StartPos, Vector3 targetPos)
     {
-        Node startNode = gridReference.nodeFromeWorldPoint(StartPos);
-        Node targetNode = gridReference.nodeFromeWorldPoint(targetPos);
+        NodeAStar startNode = gridReference.nodeFromeWorldPoint(StartPos);
+        NodeAStar targetNode = gridReference.nodeFromeWorldPoint(targetPos);
 
-        List<Node> openList = new List<Node>();
-        HashSet<Node> closedList = new HashSet<Node>();
+        List<NodeAStar> openList = new List<NodeAStar>();
+        HashSet<NodeAStar> closedList = new HashSet<NodeAStar>();
 
         openList.Add(startNode);
         while(openList.Count > 0)
         {
-            Node currentNode = openList[0];
+            NodeAStar currentNode = openList[0];
             for(int i = 1; i < openList.Count; i++)
             {
                 if (openList[i].fCost < currentNode.fCost || openList[i].fCost == currentNode.fCost && openList[i].hCost < currentNode.hCost)
@@ -45,7 +45,7 @@ public class Astar : MonoBehaviour
                 getFinalPath(startNode, targetNode);
             }
 
-            foreach(Node neighborNode in gridReference.getNeighboringNodes(currentNode))
+            foreach(NodeAStar neighborNode in gridReference.getNeighboringNodes(currentNode))
             {
                 if(!neighborNode.bIsWall || closedList.Contains(neighborNode))
                 {
@@ -69,10 +69,10 @@ public class Astar : MonoBehaviour
 
     }
 
-    void getFinalPath(Node startingNode, Node endNode)
+    void getFinalPath(NodeAStar startingNode, NodeAStar endNode)
     {
-        List<Node> finalPath = new List<Node>();
-        Node currentNode = endNode;
+        List<NodeAStar> finalPath = new List<NodeAStar>();
+        NodeAStar currentNode = endNode;
 
         while(currentNode != startingNode)
         {
@@ -84,7 +84,7 @@ public class Astar : MonoBehaviour
         gridReference.shortestPath = finalPath;
     }
 
-    int getManhattenDistance(Node nodeA, Node nodeB)
+    int getManhattenDistance(NodeAStar nodeA, NodeAStar nodeB)
     {
         int x = Mathf.Abs(nodeA.gridX - nodeB.gridX);
         int y = Mathf.Abs(nodeA.gridY - nodeB.gridY);

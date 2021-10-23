@@ -13,8 +13,8 @@ public class Grid : MonoBehaviour
     private float fNodeDiameter;
     private int gridSizeX, gridSizeY;
 
-    Node[,] nodeArray;
-    public List<Node> shortestPath;
+    NodeAStar[,] nodeArray;
+    public List<NodeAStar> shortestPath;
 
 
     void Update()
@@ -41,7 +41,7 @@ public class Grid : MonoBehaviour
 
     void createGrid()
     {
-        nodeArray = new Node[gridSizeX, gridSizeY];
+        nodeArray = new NodeAStar[gridSizeX, gridSizeY];
         Vector3 bottomLeft = transform.position - Vector3.right * gridSize.x / 2 - Vector3.forward * gridSize.y / 2;
         for(int x = 0; x < gridSizeX; x++)
         {
@@ -54,14 +54,14 @@ public class Grid : MonoBehaviour
                 {
                     wall = false;
                 }
-                nodeArray[x, y] = new Node(wall, worldLeft, x, y);
+                nodeArray[x, y] = new NodeAStar(wall, worldLeft, x, y);
             }
         }
     }
 
-    public List<Node> getNeighboringNodes(Node _NeighborNode)
+    public List<NodeAStar> getNeighboringNodes(NodeAStar _NeighborNode)
     {
-        List<Node> neighborList = new List<Node>();
+        List<NodeAStar> neighborList = new List<NodeAStar>();
         int checkX;
         int checkY;
 
@@ -112,7 +112,7 @@ public class Grid : MonoBehaviour
     return neighborList;
     }
 
-    public Node nodeFromeWorldPoint(Vector3 _worldPos)
+    public NodeAStar nodeFromeWorldPoint(Vector3 _worldPos)
     {
         float xPos = ((_worldPos.x + gridSize.x / 2) / gridSize.x);
         float yPos = ((_worldPos.z + gridSize.y / 2) / gridSize.y);
@@ -131,7 +131,7 @@ public class Grid : MonoBehaviour
 
         if (nodeArray != null)
         {
-            foreach (Node n in nodeArray)
+            foreach (NodeAStar n in nodeArray)
             {
                 if (n.bIsWall)
                 {
