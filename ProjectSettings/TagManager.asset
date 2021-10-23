@@ -3,22 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-<<<<<<< HEAD
-  - Player
-=======
-  - wall
->>>>>>> da1a22c8d0bd39002d7886f527c63d96147a69ff
+  - 
   - Water
   - UI
   - 
   - 
-  - Unwalkable
+  - 
   - 
   - 
   - 
