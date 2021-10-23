@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class StarPathfinding : MonoBehaviour
 {
+	public GameObject start, end;
 	public StarGrid grid;
 
 	void Awake()
 	{
 		grid = GetComponent<StarGrid>();
+		//FindPath(start.transform.position, end.transform.position);
 	}
 
 	public void FindPath(Vector3 startPos, Vector3 targetPos)
