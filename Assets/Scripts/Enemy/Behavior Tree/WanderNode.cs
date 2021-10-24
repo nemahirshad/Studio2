@@ -13,8 +13,6 @@ public class WanderNode : Node
             ((ZombieAgent)bt).canFollow = true;
         }
 
-        ((ZombieAgent)bt).FollowPath();
-
         bt.anim.SetBool("Wandering", true);
         
         return NodeOutcome.SUCCESS;

@@ -5,7 +5,9 @@ using UnityEngine;
 public class breakable : MonoBehaviour
 {
     public bool hasGem;
-    [SerializeField] GameObject Gam;
+    [SerializeField] GameObject Gem, health, fuel;
+
+    GameObject obj;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +21,37 @@ public class breakable : MonoBehaviour
         
     }
 
-    void onBreak()
+    public void OnBreak()
     {
         if(hasGem == true)
         {
-            Instantiate(Gam,transform.position,Quaternion.identity);
+            Instantiate(Gem,transform.position,Quaternion.identity);
+        }
+        else
+        {
+            int x = Random.Range(0, 3);
+
+            switch (x)
+            {
+                case 0:
+                    //Drop heart
+                    obj = Instantiate(health);
+                    obj.transform.position = transform.position;
+                    Destroy(gameObject);
+                    break;
+
+                case 1:
+                    //Drop Fuel
+                    obj = Instantiate(health);
+                    obj.transform.position = transform.position;
+                    Destroy(gameObject);
+                    break;
+
+                case 2:
+                    //Drop Nothing
+                    Destroy(gameObject);
+                    break;
+            }
         }
     }
 }

@@ -19,4 +19,17 @@ public class PlayerCombat : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Breakable"))
+        {
+            collision.gameObject.GetComponent<breakable>().OnBreak();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 }

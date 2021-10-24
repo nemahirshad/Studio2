@@ -12,7 +12,6 @@ public class ChaseNode : Node
             return NodeOutcome.FAIL;
         }
         ((ZombieAgent)bt).point.position = ((ZombieAgent)bt).player.transform.position;
-        ((ZombieAgent)bt).FollowPath();
 
         if (Vector2.Distance(bt.target.transform.position, bt.transform.position) < ((ZombieAgent)bt).attackRange)
         {
