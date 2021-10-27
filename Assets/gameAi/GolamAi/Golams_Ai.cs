@@ -81,7 +81,7 @@ public class Golams_Ai : MonoBehaviour
             getTarget();
         }
 
-        rb.AddForce(grid.MovementCalc() * speed * Time.deltaTime, ForceMode.Impulse);
+        rb.AddForce(grid.MovementCalculator() * speed * Time.deltaTime, ForceMode.Impulse);
 
         if (distanceToTarget() <= 2)
         {
@@ -99,7 +99,7 @@ public class Golams_Ai : MonoBehaviour
         {
             astar.TargetPosition = player.transform;
 
-            rb.AddForce(grid.MovementCalc() * speed * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(grid.MovementCalculator() * speed * Time.deltaTime, ForceMode.Impulse);
         }
 
     //private void OnDrawGizmos()

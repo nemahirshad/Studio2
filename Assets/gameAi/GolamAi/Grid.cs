@@ -22,12 +22,12 @@ public class Grid : MonoBehaviour
         fNodeDiameter = fNodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridSize.y / fNodeDiameter);
-        createGrid();
+        CreateGrid();
      
         
     }
 
-    public Vector3 MovementCalc()
+    public Vector3 MovementCalculator()
     {
         if(shortestPath != null)
         {
@@ -39,7 +39,7 @@ public class Grid : MonoBehaviour
         return Vector3.zero;
     }
 
-    void createGrid()
+    void CreateGrid()
     {
         nodeArray = new Node[gridSizeX, gridSizeY];
         Vector3 bottomLeft = transform.position - Vector3.right * gridSize.x / 2 - Vector3.forward * gridSize.y / 2;

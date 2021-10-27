@@ -7,16 +7,14 @@ public class breakable : MonoBehaviour
     public bool hasGem;
     [SerializeField] GameObject Gam;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            onBreak();
+            Destroy(gameObject);
+        }
     }
 
     void onBreak()
