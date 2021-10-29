@@ -17,6 +17,9 @@ public class GridAStar : MonoBehaviour
 =======
     Node[,] nodeArray;
     //public List<Node> shortestPath;
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/GridAStar.cs
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Grid.cs
+=======
 >>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Grid.cs
 
 
@@ -26,8 +29,11 @@ public class GridAStar : MonoBehaviour
         gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridSize.y / fNodeDiameter);
 <<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/GridAStar.cs
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/GridAStar.cs
         createGrid();
 =======
+=======
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Grid.cs
         CreateGrid();
      
         
@@ -43,12 +49,18 @@ public class GridAStar : MonoBehaviour
             return dir;
         }
 <<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/GridAStar.cs
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/GridAStar.cs
         return Vector3.zero;
 =======
+=======
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Grid.cs
         else
         {
             return Vector3.zero;
         }
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/GridAStar.cs
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Grid.cs
+=======
 >>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Grid.cs
     }
 

@@ -27,6 +27,9 @@ public class Golams_Ai : MonoBehaviour
     public Grid grid;
     AIPathHolder aiPath;
 
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Golams_Ai.cs
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs
+=======
 >>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs
 
     public void ChangeState(State newState)
@@ -64,14 +67,21 @@ public class Golams_Ai : MonoBehaviour
 <<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Golams_Ai.cs
 =======
 
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Golams_Ai.cs
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs
+=======
 >>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs
     }
 
     void getTarget()
     {
 <<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Golams_Ai.cs
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Golams_Ai.cs
         target = wayPoints[Random.Range(0, wayPoints.Length)];
         astar.TargetPosition = target.transform;
+=======
+        target = wayPoints[Random.Range(0,wayPoints.Length)];
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs
 =======
         target = wayPoints[Random.Range(0,wayPoints.Length)];
 >>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs

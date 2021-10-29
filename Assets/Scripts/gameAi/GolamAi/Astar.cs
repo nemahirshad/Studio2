@@ -70,7 +70,11 @@ public class Astar : MonoBehaviour
     }
 
 <<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Astar.cs
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Astar.cs
     void getFinalPath(NodeAStar startingNode, NodeAStar endNode)
+=======
+    void getFinalPath(Node startingNode, Node endNode, GameObject AI)
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Astar.cs
 =======
     void getFinalPath(Node startingNode, Node endNode, GameObject AI)
 >>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Astar.cs

@@ -6,6 +6,7 @@ public class breakable : MonoBehaviour
 {
     public bool hasGem;
 <<<<<<< HEAD
+<<<<<<< HEAD
     [SerializeField] GameObject Gem, health, fuel;
 
     GameObject obj;
@@ -15,6 +16,9 @@ public class breakable : MonoBehaviour
     {
         
     }
+=======
+    [SerializeField] GameObject GamPrefab;
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15
 =======
     [SerializeField] GameObject GamPrefab;
 >>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15
@@ -33,6 +37,7 @@ public class breakable : MonoBehaviour
     {
         if(hasGem == true)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             Instantiate(Gem,transform.position,Quaternion.identity);
         }
@@ -61,6 +66,9 @@ public class breakable : MonoBehaviour
                     Destroy(gameObject);
                     break;
             }
+=======
+            Instantiate(GamPrefab,transform.position,Quaternion.identity);
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15
 =======
             Instantiate(GamPrefab,transform.position,Quaternion.identity);
 >>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15
