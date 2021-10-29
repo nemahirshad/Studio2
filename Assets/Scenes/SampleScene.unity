@@ -3109,7 +3109,7 @@ MonoBehaviour:
   itemSprite: {fileID: 21300000, guid: 014d9dcf7c42404489813a9afb9fb1f5, type: 3}
   amountInStack: 47
   maxStackSize: 4
-  itemID: 2
+  itemID: 3
 --- !u!65 &1815050834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3904,6 +3904,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1158895788}
     m_Modifications:
+    - target: {fileID: 7189970448398090081, guid: 2c073090e96c9c343badde1d7aa59c14, type: 3}
+      propertyPath: itemID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7189970448398090086, guid: 2c073090e96c9c343badde1d7aa59c14, type: 3}
       propertyPath: m_Name
       value: Health Item
