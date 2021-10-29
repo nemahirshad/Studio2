@@ -21,7 +21,13 @@ public class Golams_Ai : MonoBehaviour
     public float attackRange;
     private State CurrentState; //Local variable that represents our state
     public Astar astar;
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Golams_Ai.cs
     public GridAStar grid;
+=======
+    public Grid grid;
+    AIPathHolder aiPath;
+
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs
 
     public void ChangeState(State newState)
     {
@@ -55,12 +61,20 @@ public class Golams_Ai : MonoBehaviour
         }
 
         Debug.Log(CurrentState);
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Golams_Ai.cs
+=======
+
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs
     }
 
     void getTarget()
     {
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Golams_Ai.cs
         target = wayPoints[Random.Range(0, wayPoints.Length)];
         astar.TargetPosition = target.transform;
+=======
+        target = wayPoints[Random.Range(0,wayPoints.Length)];
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs
     }
 
 
@@ -70,14 +84,14 @@ public class Golams_Ai : MonoBehaviour
         {
             getTarget();
         }
+        astar.FindPath(transform.position, target.transform.position, gameObject);
 
-        rb.AddForce(grid.MovementCalc() * speed * Time.deltaTime, ForceMode.Impulse);
+        rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
 
-        if (distanceToTarget() <= 2)
+        if (distanceToTarget() <= 3)
         {
             getTarget();
         }
-
     }
     public float distanceToTarget()
     {
@@ -85,12 +99,22 @@ public class Golams_Ai : MonoBehaviour
         return dist;
     }
 
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Golams_Ai.cs
     public void Chasing()
     {
         astar.TargetPosition = player.transform;
 
         rb.AddForce(grid.MovementCalc() * speed * Time.deltaTime, ForceMode.Impulse);
     }
+=======
+        public void Chasing()
+        {
+        //astar.TargetPosition = player.transform;
+            astar.FindPath(transform.position, player.transform.position, gameObject);
+            rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
+            Debug.Log(grid.MovementCalculator(gameObject));
+        }
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Golams_Ai.cs
 
     //private void OnDrawGizmos()
     //{

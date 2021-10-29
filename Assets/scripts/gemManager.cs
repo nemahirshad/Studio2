@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class gemManager : MonoBehaviour
 {
-    
-    public GameObject[] gems;
+    [SerializeField]
+    int gemNumber;
+    public List<GameObject> vases;
+    [SerializeField] List<GameObject> gemVases;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        int Rond = Random.Range(0, gems.Length);
-        gems[Rond].GetComponent<breakable>().hasGem = true;
-      
-        
-    }
+        gemVases = new List<GameObject>(gemNumber);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int i = 0; i < gemNumber; i++)
+        {
+            int Rand = Random.Range(0, vases.Count);
+            vases[Rand].GetComponent<breakable>().hasGem = true;
+            gemVases.Add(vases[Rand]);
+            vases.RemoveAt(Rand); 
+        }
     }
 }

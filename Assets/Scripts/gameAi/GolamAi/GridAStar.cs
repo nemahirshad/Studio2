@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GridAStar : MonoBehaviour
 {
-    public Transform StartPositon;
-
     public LayerMask WallLayer;
     public Vector2 gridSize;
     public float fNodeRadius;
@@ -13,8 +11,13 @@ public class GridAStar : MonoBehaviour
     private float fNodeDiameter;
     private int gridSizeX, gridSizeY;
 
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/GridAStar.cs
     NodeAStar[,] nodeArray;
     public List<NodeAStar> shortestPath;
+=======
+    Node[,] nodeArray;
+    //public List<Node> shortestPath;
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Grid.cs
 
 
     void Update()
@@ -22,21 +25,34 @@ public class GridAStar : MonoBehaviour
         fNodeDiameter = fNodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridSize.y / fNodeDiameter);
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/GridAStar.cs
         createGrid();
+=======
+        CreateGrid();
+     
+        
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Grid.cs
     }
 
-    public Vector3 MovementCalc()
+    public Vector3 MovementCalculator(GameObject AI)
     {
-        if(shortestPath != null)
+        if(AI.GetComponent<AIPathHolder>().shortestPath != null)
         {
-            Vector3 dir = shortestPath[0].worldPosition - StartPositon.position + new Vector3(0, 0.5f, 0);
+            Vector3 dir = AI.GetComponent<AIPathHolder>().shortestPath[0].worldPosition - AI.transform.position + new Vector3(0, 0.5f, 0);
             dir.Normalize();
             return dir;
         }
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/GridAStar.cs
         return Vector3.zero;
+=======
+        else
+        {
+            return Vector3.zero;
+        }
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Grid.cs
     }
 
-    void createGrid()
+    void CreateGrid()
     {
         nodeArray = new NodeAStar[gridSizeX, gridSizeY];
         Vector3 bottomLeft = transform.position - Vector3.right * gridSize.x / 2 - Vector3.forward * gridSize.y / 2;
@@ -135,13 +151,13 @@ public class GridAStar : MonoBehaviour
                     Gizmos.color = Color.black;
                 }
 
-                if (shortestPath != null)
-                {
-                    if (shortestPath.Contains(n))
-                    {
-                        Gizmos.color = Color.green;
-                    }
-                }
+                //if (shortestPath != null)
+                //{
+                //    if (shortestPath.Contains(n))
+                //    {
+                //        Gizmos.color = Color.green;
+                //    }
+                //}
                 Gizmos.DrawCube(n.worldPosition, Vector3.one * (fNodeDiameter - fDistanceBetweenNode));
             }
         }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class breakable : MonoBehaviour
 {
     public bool hasGem;
+<<<<<<< HEAD
     [SerializeField] GameObject Gem, health, fuel;
 
     GameObject obj;
@@ -14,17 +15,25 @@ public class breakable : MonoBehaviour
     {
         
     }
+=======
+    [SerializeField] GameObject GamPrefab;
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            onBreak();
+            Destroy(gameObject);
+        }
     }
 
     public void OnBreak()
     {
         if(hasGem == true)
         {
+<<<<<<< HEAD
             Instantiate(Gem,transform.position,Quaternion.identity);
         }
         else
@@ -52,6 +61,9 @@ public class breakable : MonoBehaviour
                     Destroy(gameObject);
                     break;
             }
+=======
+            Instantiate(GamPrefab,transform.position,Quaternion.identity);
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15
         }
     }
 }

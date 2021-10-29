@@ -15,10 +15,10 @@ public class Astar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FindPath(StartPosition.position, TargetPosition.position);
+        //FindPath(StartPosition.position, TargetPosition.position);
     }
 
-    void FindPath(Vector3 StartPos, Vector3 targetPos)
+    public void FindPath(Vector3 StartPos, Vector3 targetPos,GameObject AI)
     {
         NodeAStar startNode = gridReference.nodeFromeWorldPoint(StartPos);
         NodeAStar targetNode = gridReference.nodeFromeWorldPoint(targetPos);
@@ -42,7 +42,7 @@ public class Astar : MonoBehaviour
 
             if(currentNode == targetNode)
             {
-                getFinalPath(startNode, targetNode);
+                getFinalPath(startNode, targetNode,AI);
             }
 
             foreach(NodeAStar neighborNode in gridReference.getNeighboringNodes(currentNode))
@@ -69,7 +69,11 @@ public class Astar : MonoBehaviour
 
     }
 
+<<<<<<< HEAD:Assets/Scripts/gameAi/GolamAi/Astar.cs
     void getFinalPath(NodeAStar startingNode, NodeAStar endNode)
+=======
+    void getFinalPath(Node startingNode, Node endNode, GameObject AI)
+>>>>>>> 7d48e6f7538afef6f46ca19b2d41d13f6ba80f15:Assets/gameAi/GolamAi/Astar.cs
     {
         List<NodeAStar> finalPath = new List<NodeAStar>();
         NodeAStar currentNode = endNode;
@@ -81,7 +85,9 @@ public class Astar : MonoBehaviour
         }
 
         finalPath.Reverse();
-        gridReference.shortestPath = finalPath;
+        //gridReference.shortestPath = finalPath;
+        AI.GetComponent<AIPathHolder>().shortestPath = finalPath;
+        //ShortestPath = finalPath;
     }
 
     int getManhattenDistance(NodeAStar nodeA, NodeAStar nodeB)
