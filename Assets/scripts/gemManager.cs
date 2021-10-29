@@ -6,56 +6,22 @@ public class gemManager : MonoBehaviour
 {
     [SerializeField]
     int gemNumber;
-    public GameObject gemPrefab;
-    public GameObject[] vases;
+    public List<GameObject> vases;
+    [SerializeField] List<GameObject> gemVases;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        int a = 0;
-        while (a < gemNumber)
-        {
+        gemVases = new List<GameObject>(gemNumber);
 
-
-        }
         for (int i = 0; i < gemNumber; i++)
         {
-            int Rand = Random.Range(0, vases.Length);
+            int Rand = Random.Range(0, vases.Count);
             vases[Rand].GetComponent<breakable>().hasGem = true;
+            gemVases.Add(vases[Rand]);
+            vases.RemoveAt(Rand); 
         }
-
-        
-        foreach (var item in vases)
-        {
-            if (item.GetComponent<breakable>().hasGem == true)
-            {
-                a++;
-            }
-        }
-
-        
-        while (a < gemNumber)
-        {
-            foreach (var item in vases)
-            {
-                if (item.GetComponent<breakable>().hasGem != true)
-                {
-                    item.GetComponent<breakable>().hasGem = true;
-                    a++;
-                }
-            }
-        }
-        
-        
-      
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -24,6 +24,8 @@ public class Golams_Ai : MonoBehaviour
     private State CurrentState; //Local variable that represents our state
     public Astar astar;
     public Grid grid;
+    AIPathHolder aiPath;
+
 
     public void ChangeState(State newState)
     {
@@ -60,34 +62,28 @@ public class Golams_Ai : MonoBehaviour
 
         Debug.Log(CurrentState);
 
-
-
-
-
-
     }
 
     void getTarget()
     {
         target = wayPoints[Random.Range(0,wayPoints.Length)];
-        astar.TargetPosition = target.transform;
     }
 
 
- void Patrol()
+    void Patrol()
     {
         if (!target)
         {
             getTarget();
         }
+        astar.FindPath(transform.position, target.transform.position, gameObject);
 
-        rb.AddForce(grid.MovementCalculator() * speed * Time.deltaTime, ForceMode.Impulse);
+        rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
 
-        if (distanceToTarget() <= 2)
+        if (distanceToTarget() <= 3)
         {
             getTarget();
         }
-
     }
         public float distanceToTarget()
         {
@@ -97,9 +93,10 @@ public class Golams_Ai : MonoBehaviour
 
         public void Chasing()
         {
-            astar.TargetPosition = player.transform;
-
-            rb.AddForce(grid.MovementCalculator() * speed * Time.deltaTime, ForceMode.Impulse);
+        //astar.TargetPosition = player.transform;
+            astar.FindPath(transform.position, player.transform.position, gameObject);
+            rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
+            Debug.Log(grid.MovementCalculator(gameObject));
         }
 
     //private void OnDrawGizmos()

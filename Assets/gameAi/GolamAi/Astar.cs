@@ -15,10 +15,10 @@ public class Astar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FindPath(StartPosition.position, TargetPosition.position);
+        //FindPath(StartPosition.position, TargetPosition.position);
     }
 
-    void FindPath(Vector3 StartPos, Vector3 targetPos)
+    public void FindPath(Vector3 StartPos, Vector3 targetPos,GameObject AI)
     {
         Node startNode = gridReference.nodeFromeWorldPoint(StartPos);
         Node targetNode = gridReference.nodeFromeWorldPoint(targetPos);
@@ -42,7 +42,7 @@ public class Astar : MonoBehaviour
 
             if(currentNode == targetNode)
             {
-                getFinalPath(startNode, targetNode);
+                getFinalPath(startNode, targetNode,AI);
             }
 
             foreach(Node neighborNode in gridReference.getNeighboringNodes(currentNode))
@@ -69,7 +69,7 @@ public class Astar : MonoBehaviour
 
     }
 
-    void getFinalPath(Node startingNode, Node endNode)
+    void getFinalPath(Node startingNode, Node endNode, GameObject AI)
     {
         List<Node> finalPath = new List<Node>();
         Node currentNode = endNode;
@@ -81,7 +81,9 @@ public class Astar : MonoBehaviour
         }
 
         finalPath.Reverse();
-        gridReference.shortestPath = finalPath;
+        //gridReference.shortestPath = finalPath;
+        AI.GetComponent<AIPathHolder>().shortestPath = finalPath;
+        //ShortestPath = finalPath;
     }
 
     int getManhattenDistance(Node nodeA, Node nodeB)

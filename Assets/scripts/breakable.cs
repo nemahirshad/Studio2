@@ -5,7 +5,7 @@ using UnityEngine;
 public class breakable : MonoBehaviour
 {
     public bool hasGem;
-    [SerializeField] GameObject Gam;
+    [SerializeField] GameObject GamPrefab;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +21,7 @@ public class breakable : MonoBehaviour
     {
         if(hasGem == true)
         {
-            Instantiate(Gam,transform.position,Quaternion.identity);
+            Instantiate(GamPrefab,transform.position,Quaternion.identity);
         }
     }
 }

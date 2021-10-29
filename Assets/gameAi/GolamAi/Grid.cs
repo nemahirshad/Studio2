@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
-    public Transform StartPositon;
-
     public LayerMask WallLayer;
     public Vector2 gridSize;
     public float fNodeRadius;
@@ -14,7 +12,7 @@ public class Grid : MonoBehaviour
     private int gridSizeX, gridSizeY;
 
     Node[,] nodeArray;
-    public List<Node> shortestPath;
+    //public List<Node> shortestPath;
 
 
     void Update()
@@ -27,16 +25,18 @@ public class Grid : MonoBehaviour
         
     }
 
-    public Vector3 MovementCalculator()
+    public Vector3 MovementCalculator(GameObject AI)
     {
-        if(shortestPath != null)
+        if(AI.GetComponent<AIPathHolder>().shortestPath != null)
         {
-            Vector3 dir = shortestPath[0].worldPosition - StartPositon.position + new Vector3(0, 0.5f, 0);
+            Vector3 dir = AI.GetComponent<AIPathHolder>().shortestPath[0].worldPosition - AI.transform.position + new Vector3(0, 0.5f, 0);
             dir.Normalize();
             return dir;
         }
-
-        return Vector3.zero;
+        else
+        {
+            return Vector3.zero;
+        }
     }
 
     void CreateGrid()
@@ -142,13 +142,13 @@ public class Grid : MonoBehaviour
                     Gizmos.color = Color.black;
                 }
 
-                if (shortestPath != null)
-                {
-                    if (shortestPath.Contains(n))
-                    {
-                        Gizmos.color = Color.green;
-                    }
-                }
+                //if (shortestPath != null)
+                //{
+                //    if (shortestPath.Contains(n))
+                //    {
+                //        Gizmos.color = Color.green;
+                //    }
+                //}
                 Gizmos.DrawCube(n.worldPosition, Vector3.one * (fNodeDiameter - fDistanceBetweenNode));
             }
         }
