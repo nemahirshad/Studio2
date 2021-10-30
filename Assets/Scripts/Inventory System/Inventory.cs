@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Inventory : MonoBehaviour
@@ -8,12 +9,14 @@ public class Inventory : MonoBehaviour
     public GemScriptableObject gems;
 
     public GameObject inventoryObject;
+    public GameObject followMouseImage;
+ 
 
     public Slot[] slots;
     private void Start()
     {
         inventoryObject.SetActive(false);
-
+        followMouseImage.SetActive(false);
         foreach (Slot i in slots)
         {
             i.CustomStart();
@@ -24,8 +27,15 @@ public class Inventory : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            
             inventoryObject.SetActive(!inventoryObject.activeInHierarchy);
+            
         }
+        if(inventoryObject.activeInHierarchy)
+            {
+            followMouseImage.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined; } 
+        else { followMouseImage.SetActive(false); Cursor.lockState = CursorLockMode.Locked; }
 
         foreach (Slot i in slots)
             i.CheckForItem();
