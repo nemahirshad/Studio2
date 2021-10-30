@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIPathHolder : MonoBehaviour
+namespace Brendan
 {
-    public List<Node> shortestPath;
-    
+    public class AIPathHolder : MonoBehaviour
+    {
+        public List<Node> shortestPath;
+
+    }
+
 }
