@@ -152,11 +152,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 109631726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &109631728
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -263,11 +265,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 189774281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &189774283
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -374,11 +378,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 224743571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &224743573
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -485,11 +491,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 295471032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &295471034
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -596,11 +604,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 446053675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &446053677
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -707,11 +717,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 446669856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &446669858
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -818,11 +830,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 610640186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &610640188
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -929,11 +943,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 630580975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &630580977
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1040,11 +1056,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 748357756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &748357758
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1151,11 +1169,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 771286838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &771286840
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1441,11 +1461,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1084725621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &1084725623
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1552,11 +1574,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1504654420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &1504654422
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1663,11 +1687,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1641789257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &1641789259
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1774,11 +1800,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1870553443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb1361d95849cf439383c4f42dc01ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
-  GamPrefab: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  Gem: {fileID: 2884315064052069490, guid: 0af4acf95a09c8f448150ea34baac2f7, type: 3}
+  health: {fileID: 0}
+  fuel: {fileID: 0}
 --- !u!136 &1870553445
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1885,7 +1913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7456827a3cb1e1e468c23cdc02a68261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemNumber: 3
+  gemNumber: 4
   vases:
   - {fileID: 771286838}
   - {fileID: 1641789257}
