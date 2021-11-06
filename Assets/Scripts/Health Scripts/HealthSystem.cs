@@ -26,13 +26,13 @@ public class HealthSystem : MonoBehaviour
             currentHealth = maxHealth;
 
 
-//---------------Testing HP System-----------------
+/*---------------Testing HP System-----------------
         if (Input.GetKeyDown(KeyCode.Space))
             LoseHP(damage);
 
         if (Input.GetKeyDown(KeyCode.H))
             GainHP(gainHP);
-//---------------Testing HP System-----------------
+---------------Testing HP System-----------------*/
 
 
         for (int i = 0; i < hearts.Length; i++)

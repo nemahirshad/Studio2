@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5389893363470397931}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,11 +139,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gems: {fileID: 0}
-  inventoryObject: {fileID: 0}
+  inventoryObject: {fileID: 4710611665491024639}
   slots:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  healthSystem: {fileID: 5389893363470397931}
+  healthPickup: []
+  torchfuelPickup: []
+  shipfuelPickup: []
 --- !u!114 &5389893363470397931
 MonoBehaviour:
   m_ObjectHideFlags: 0
