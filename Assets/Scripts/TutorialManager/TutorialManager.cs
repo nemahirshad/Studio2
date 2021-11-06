@@ -7,11 +7,10 @@ public class TutorialManager : MonoBehaviour
     public GameObject[] popUps;
     private int i;
     private int countForInput;
+
+
     void Start()
-
     {
-        
-
        countForInput = 0;
     }
 
@@ -29,14 +28,10 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-
-
         if (i == 0)
         {
             if (Input.GetKeyDown(KeyCode.Return)) // INTRO TO SKIP
             {
-                Debug.Log("donkey");
-                Debug.Log("works");
                 i++;
             }
         }
@@ -100,6 +95,5 @@ public class TutorialManager : MonoBehaviour
                 i++;
             }
         }
-        Debug.Log(countForInput);
     }
 }
