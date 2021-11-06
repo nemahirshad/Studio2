@@ -16,9 +16,6 @@ public class HealthSystem : MonoBehaviour
     public GameObject gameOver;
   
 
-    Button respawn;
-    Button mainMenu;
-
     void Start()
     {
         //currentHealth = maxHealth;

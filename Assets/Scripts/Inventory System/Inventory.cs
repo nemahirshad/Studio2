@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
     //-------------------------Farhan's Code-------------------------
     public HealthSystem healthSystem;
     public Text scoreText;
+    //public Drop dropClass;
 
     public List<Item> healthPickup;
     public List<Item> torchfuelPickup;
