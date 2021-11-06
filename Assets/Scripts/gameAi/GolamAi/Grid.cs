@@ -17,7 +17,7 @@ namespace Brendan
         //public List<Node> shortestPath;
 
 
-        void Update()
+        void Awake()
         {
             fNodeDiameter = fNodeRadius * 2;
             gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);

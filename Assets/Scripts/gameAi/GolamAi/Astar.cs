@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Brendan;
 
 namespace Brendan
 {
     public class Astar : MonoBehaviour
     {
         Grid gridReference;
-        public Transform StartPosition;
-        public Transform TargetPosition;
+        private Transform StartPosition;
+        private Transform TargetPosition;
         private void Awake()
         {
-            gridReference = GameObject.FindObjectOfType<Grid>().GetComponent<Grid>();
+            gridReference = GameObject.FindObjectOfType<Grid>();
         }
 
         // Update is called once per frame

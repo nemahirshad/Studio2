@@ -9,8 +9,6 @@ public class Breakable : MonoBehaviour
 
     GameObject obj;
 
-    [SerializeField] GameObject GamPrefab;
-
    
     void Update()
     {
@@ -27,32 +25,32 @@ public class Breakable : MonoBehaviour
         {
             Instantiate(Gem, transform.position, Quaternion.identity);
         }
-        else
-        {
-            int x = Random.Range(0, 3);
+        //else
+        //{
+        //    int x = Random.Range(0, 3);
 
-            switch (x)
-            {
-                case 0:
-                    //Drop heart
-                    obj = Instantiate(health);
-                    obj.transform.position = transform.position;
-                    Destroy(gameObject);
-                    break;
+        //    switch (x)
+        //    {
+        //        case 0:
+        //            //Drop heart
+        //            obj = Instantiate(health);
+        //            obj.transform.position = transform.position;
+        //            Destroy(gameObject);
+        //            break;
 
-                case 1:
-                    //Drop Fuel
-                    obj = Instantiate(health);
-                    obj.transform.position = transform.position;
-                    Destroy(gameObject);
-                    break;
+        //        case 1:
+        //            //Drop Fuel
+        //            obj = Instantiate(health);
+        //            obj.transform.position = transform.position;
+        //            Destroy(gameObject);
+        //            break;
 
-                case 2:
-                    //Drop Nothing
-                    Destroy(gameObject);
-                    break;
-            }
+        //        case 2:
+        //            //Drop Nothing
+        //            Destroy(gameObject);
+        //            break;
+        //    }
 
-        }
+        //}
     }
 }
