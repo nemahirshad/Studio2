@@ -96,7 +96,7 @@ public class HealthSystem : MonoBehaviour
                 }*/
 
         //Checks to see if the damage dealt is greater than the max health. If it is, it lets the player have one heart, to ensure they have a chance at survival.
-        if (damage >= maxHealth)
+        /*if (damage >= maxHealth)
         {
             currentHealth -= maxHealth - 1;
 
@@ -105,7 +105,7 @@ public class HealthSystem : MonoBehaviour
                 currentHealth = 0;
                 PlayerDeath();
             }
-        }
+        }*/
 
         //Checks if the damage dealt is less than max health. If true, the player loses hp that is equal to the amount of damage recieved.
         if (damage < maxHealth)

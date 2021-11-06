@@ -297,6 +297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: golem (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 939506436220003537, guid: 042fb1c491d72914eb836a90ab37f4a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042fb1c491d72914eb836a90ab37f4a0, type: 3}
 --- !u!1 &202940780 stripped
@@ -590,7 +594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968386862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.59, y: 0.5, z: -17.14}
+  m_LocalPosition: {x: 3.59, y: 0.5, z: -20.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1057,8 +1061,8 @@ GameObject:
   - component: {fileID: 1595650473}
   - component: {fileID: 1595650472}
   - component: {fileID: 1595650471}
-  - component: {fileID: 1595650475}
   - component: {fileID: 1595650476}
+  - component: {fileID: 1595650475}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1158,8 +1162,8 @@ MonoBehaviour:
   WallLayer:
     serializedVersion: 2
     m_Bits: 8
-  gridSize: {x: 50, y: 50}
-  fNodeRadius: 1.1
+  gridSize: {x: 80, y: 80}
+  fNodeRadius: 1.2
   fDistanceBetweenNode: 1
 --- !u!114 &1595650476
 MonoBehaviour:
@@ -1173,8 +1177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9bcd25929004ee4294668752d0f2168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPosition: {fileID: 0}
-  TargetPosition: {fileID: 0}
 --- !u!1 &1816233672
 GameObject:
   m_ObjectHideFlags: 0

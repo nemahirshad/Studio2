@@ -7,7 +7,7 @@ public class gemManager : MonoBehaviour
     [SerializeField]
     int gemNumber;
     public List<GameObject> vases;
-    [SerializeField] List<GameObject> gemVases;
+    [SerializeField]List<GameObject> gemVases;
 
 
 
