@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
 
     public int amountInStack = 1;
 
-    public int maxStackSize = 1000;
+    public int maxStackSize = 6;
 
     public int itemID;
 }

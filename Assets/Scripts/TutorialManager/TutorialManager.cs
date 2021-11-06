@@ -8,12 +8,14 @@ public class TutorialManager : MonoBehaviour
     private int i;
     private int countForInput;
     void Start()
-    { 
-        countForInput = 0;
+
+    {
+        
+
+       countForInput = 0;
     }
 
- 
-    void Update()
+    public void Update()
     {
         for (int i = 0; i < popUps.Length; i++)
         {
@@ -33,6 +35,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return)) // INTRO TO SKIP
             {
+                Debug.Log("donkey");
                 Debug.Log("works");
                 i++;
             }

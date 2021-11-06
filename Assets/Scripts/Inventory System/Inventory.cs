@@ -9,8 +9,9 @@ public class Inventory : MonoBehaviour
     public GemScriptableObject gems;
 
     public GameObject inventoryObject;
+    public GameObject rewardSystem;
     public GameObject followMouseImage;
- 
+  
 
     public Slot[] slots;
     private void Start()
@@ -31,7 +32,7 @@ public class Inventory : MonoBehaviour
             inventoryObject.SetActive(!inventoryObject.activeInHierarchy);
             
         }
-        if(inventoryObject.activeInHierarchy)
+        if(inventoryObject.activeInHierarchy || rewardSystem.activeInHierarchy)
             {
             followMouseImage.SetActive(true);
             Cursor.lockState = CursorLockMode.Confined; } 
