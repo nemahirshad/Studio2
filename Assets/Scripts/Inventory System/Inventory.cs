@@ -9,12 +9,14 @@ public class Inventory : MonoBehaviour
     public GemScriptableObject gems;
 
     public GameObject inventoryObject;
+    public GameObject followMouseImage;
 
     public Slot[] slots;
 
     //-------------------------Farhan's Code-------------------------
     public HealthSystem healthSystem;
     public Text scoreText;
+    //public Drop dropClass;
 
     public List<Item> healthPickup;
     public List<Item> torchfuelPickup;
@@ -55,8 +57,14 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             inventoryObject.SetActive(!inventoryObject.activeInHierarchy);
-
         }
+
+        if (inventoryObject.activeInHierarchy)
+        {
+            followMouseImage.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else { followMouseImage.SetActive(false); Cursor.lockState = CursorLockMode.Locked; }
 
         foreach (Slot i in slots)
             i.CheckForItem();
