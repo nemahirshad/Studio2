@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Inventory : MonoBehaviour
@@ -13,10 +14,13 @@ public class Inventory : MonoBehaviour
 
     //-------------------------Farhan's Code-------------------------
     public HealthSystem healthSystem;
+    public Text scoreText;
 
     public List<Item> healthPickup;
     public List<Item> torchfuelPickup;
     public List<Item> shipfuelPickup;
+
+    int scoreCount;
 
     //These bools can be set to false when the player inventory does not contain any item corresponding to their respective bools.
     bool canUseHealth = false;
@@ -30,10 +34,12 @@ public class Inventory : MonoBehaviour
         //-------------------------Farhan's Code-------------------------
         //Im having some trouble figuring out how to simply use the maxStackSize value from the Item Script
         //So Im gonna leave it empty for now. Will need to work with Dylan to solve this later.
-
         healthPickup = new List<Item>();
         torchfuelPickup = new List<Item>();
         shipfuelPickup = new List<Item>();
+
+        scoreCount = 0;
+        UpdateScore();
         //-------------------------Farhan's Code-------------------------
 
         inventoryObject.SetActive(false);
@@ -194,9 +200,14 @@ public class Inventory : MonoBehaviour
         }
         //------------------------------Requires Additional Tasks To Be Completed-------------------------
     }
+
+    public void UpdateScore()
+    {
+        scoreText.text = "Coins: " + scoreCount;
+    }
     //-------------------------Farhan's Code-------------------------
 
-    private void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.GetComponent<Item>())
         {
@@ -206,7 +217,16 @@ public class Inventory : MonoBehaviour
             SortItems(col.GetComponent<Item>());
         }
 
-        if (col.CompareTag("Gem"))
+        //-------------------------Farhan's Code-------------------------
+        if (col.gameObject.CompareTag("Coin"))
+        {
+            Destroy(col.gameObject);
+            scoreCount++;
+            UpdateScore();
+        }
+        //-------------------------Farhan's Code-------------------------
+
+        else if (col.CompareTag("Gem"))
         {
             gems.value++;
         }
