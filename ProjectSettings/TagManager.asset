@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Breakable
+  - Gem
+  - Coin
   layers:
   - Default
   - TransparentFX

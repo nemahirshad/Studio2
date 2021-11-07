@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 4710611665491024633}
   - component: {fileID: 4710611665491024632}
   - component: {fileID: 4710611665491024631}
+  - component: {fileID: 5389893363470397931}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,11 +138,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d81d8317ee0134899eafc053de9220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryObject: {fileID: 0}
+  gems: {fileID: 0}
+  inventoryObject: {fileID: 4710611665491024639}
   slots:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  healthSystem: {fileID: 5389893363470397931}
+  healthPickup: []
+  torchfuelPickup: []
+  shipfuelPickup: []
+--- !u!114 &5389893363470397931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710611665491024639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299218066aa3f7a46945b31be061bd43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 6
+  maxHealth: 6
+  hearts: []
+  damage: 1
+  gainHP: 1
 --- !u!1 &4710611666046455065
 GameObject:
   m_ObjectHideFlags: 0
