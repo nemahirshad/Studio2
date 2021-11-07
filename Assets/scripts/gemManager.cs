@@ -9,8 +9,6 @@ public class gemManager : MonoBehaviour
     public List<GameObject> vases;
     [SerializeField]List<GameObject> gemVases;
 
-
-
     // Start is called before the first frame update
     void Start()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Brendan;
 
 public class BehaviorTree : MonoBehaviour
 {
@@ -8,8 +9,16 @@ public class BehaviorTree : MonoBehaviour
 
     public Animator anim;
 
+    public Rigidbody rb;
+
     public GameObject target;
     public GameObject player;
+
+    public Brendan.Grid grid;
+
+    public Astar astar;
+
+    public AIPathHolder path;
 
     public float range;
 

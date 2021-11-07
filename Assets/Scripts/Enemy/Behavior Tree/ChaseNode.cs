@@ -12,6 +12,7 @@ public class ChaseNode : Node
             return NodeOutcome.FAIL;
         }
         ((ZombieAgent)bt).point.position = ((ZombieAgent)bt).player.transform.position;
+        bt.astar.FindPath(((ZombieAgent)bt).transform.position, ((ZombieAgent)bt).point.position, ((ZombieAgent)bt).gameObject);
 
         if (Vector2.Distance(bt.target.transform.position, bt.transform.position) < ((ZombieAgent)bt).attackRange)
         {
@@ -21,6 +22,8 @@ public class ChaseNode : Node
         {
             ((ZombieAgent)bt).canFollow = true;
         }
+
+        bt.rb.AddForce(bt.grid.MovementCalculator(((ZombieAgent)bt).gameObject) * ((ZombieAgent)bt).speed * Time.deltaTime, ForceMode.Impulse);
 
         bt.anim.SetBool("Chasing", true);
         bt.anim.SetBool("Wandering", false);

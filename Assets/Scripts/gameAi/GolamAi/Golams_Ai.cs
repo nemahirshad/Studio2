@@ -15,8 +15,7 @@ namespace Brendan
 
     public class Golams_Ai : MonoBehaviour
     {
-
-
+        public Animator anim;
         public float speed;
         public GameObject[] wayPoints;
         public GameObject target;
@@ -30,7 +29,6 @@ namespace Brendan
         public Grid grid;
         AIPathHolder aiPath;
 
-
         public void ChangeState(State newState)
         {
             CurrentState = newState;
@@ -41,11 +39,8 @@ namespace Brendan
             CurrentState = State.Patrol;
         }
 
-
         void Update()
         {
-
-
             switch (CurrentState)
             {
                 case State.Patrol:
@@ -55,6 +50,7 @@ namespace Brendan
                         ChangeState(State.Chase);
                     }
                     break;
+
                 case State.Chase:
                     Chasing();
                     if (Vector3.Distance(player.transform.position, transform.position) > chaseRange)
@@ -63,16 +59,13 @@ namespace Brendan
                     }
                     break;
             }
-
             Debug.Log(CurrentState);
-
         }
 
         void getTarget()
         {
             target = wayPoints[Random.Range(0, wayPoints.Length)];
         }
-
 
         void Patrol()
         {
@@ -89,6 +82,7 @@ namespace Brendan
                 getTarget();
             }
         }
+
         public float distanceToTarget()
         {
             float dist = Vector3.Distance(gameObject.transform.position, target.transform.position);

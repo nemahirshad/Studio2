@@ -23,8 +23,6 @@ namespace Brendan
             gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);
             gridSizeY = Mathf.RoundToInt(gridSize.y / fNodeDiameter);
             CreateGrid();
-
-
         }
 
         public Vector3 MovementCalculator(GameObject AI)
