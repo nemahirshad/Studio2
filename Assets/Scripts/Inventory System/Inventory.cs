@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     public List<Item> torchfuelPickup;
     public List<Item> shipfuelPickup;
 
-    int scoreCount;
+    public int scoreCount;
 
     //These bools can be set to false when the player inventory does not contain any item corresponding to their respective bools.
     bool canUseHealth = false;

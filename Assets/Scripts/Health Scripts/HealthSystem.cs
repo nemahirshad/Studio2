@@ -130,10 +130,7 @@ public class HealthSystem : MonoBehaviour
 
     public void PlayerDeath( )
     {
-        if(currentHealth <= 0)
-        {
-            gameOver.SetActive(true);
-        }
+       gameOver.SetActive(true);
     }
     public void RespawnButton()
     {
