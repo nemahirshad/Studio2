@@ -16,13 +16,14 @@ public class Inventory : MonoBehaviour
     //-------------------------Farhan's Code-------------------------
     public HealthSystem healthSystem;
     public Text scoreText;
-    //public Drop dropClass;
+    public Text highscoreText;
 
     public List<Item> healthPickup;
     public List<Item> torchfuelPickup;
     public List<Item> shipfuelPickup;
 
     int scoreCount;
+    int highScore;
 
     //These bools can be set to false when the player inventory does not contain any item corresponding to their respective bools.
     bool canUseHealth = false;
@@ -41,6 +42,8 @@ public class Inventory : MonoBehaviour
         shipfuelPickup = new List<Item>();
 
         scoreCount = 0;
+        highScore = 3;
+        highscoreText.text = "Highscore: " + highScore;
         UpdateScore();
         //-------------------------Farhan's Code-------------------------
 
@@ -212,6 +215,11 @@ public class Inventory : MonoBehaviour
     public void UpdateScore()
     {
         scoreText.text = "Coins: " + scoreCount;
+        if (highScore < scoreCount)
+        {
+            highScore = scoreCount;
+            highscoreText.text = "Highscore: " + highScore;
+        }
     }
     //-------------------------Farhan's Code-------------------------
 
