@@ -7,6 +7,7 @@ public class WeaponDamage : MonoBehaviour
     public int damage;
     public float rayDist;
     public Transform startPos, endPos;
+    
     // Start is called before the first frame update
 
     public void attack()
@@ -14,9 +15,10 @@ public class WeaponDamage : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(startPos.position,endPos.position,out hit,rayDist))
         {
-            if (hit.collider.tag == "Zombie")
+            if (hit.collider.tag == "Golem")
             {
-                //
+                hit.collider.GetComponent<Brendan.Golams_Ai>().onDeathEffects();
+                Debug.Log("GOLEM HIT");
             }
         }
     }
