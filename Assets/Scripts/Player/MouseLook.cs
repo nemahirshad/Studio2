@@ -7,6 +7,8 @@ public class MouseLook : MonoBehaviour
     public float mouseSense = 100.0f;
     public Transform playerBod;
 
+    float mouseX, mouseY;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,12 @@ public class MouseLook : MonoBehaviour
     {
         // mouselook
        
-        float mouseX = Input.GetAxis("Mouse X") * mouseSense * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSense * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X") * mouseSense * Time.deltaTime;
+        mouseY = Input.GetAxis("Mouse Y") * mouseSense * Time.deltaTime;
+    }
 
+    private void LateUpdate()
+    {
         playerBod.Rotate(Vector3.up * mouseX);
     }
 }
