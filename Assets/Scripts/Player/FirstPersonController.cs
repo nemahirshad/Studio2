@@ -21,13 +21,16 @@ public class FirstPersonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rayOrigin = fpsCam.ViewportToWorldPoint(Input.mousePosition);
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, detectionRange, interactable))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            hit.transform.gameObject.GetComponent<Interactable>().Interact();
+            rayOrigin = fpsCam.ViewportToWorldPoint(Input.mousePosition);
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, detectionRange, interactable))
+            {
+                hit.transform.gameObject.GetComponent<Interactable>().Interact();
+            }
         }
     }
 }

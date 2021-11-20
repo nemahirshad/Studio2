@@ -16,7 +16,7 @@ namespace Brendan
     public class Golams_Ai : MonoBehaviour
     {
 
-
+        public Animator anim;
         public float speed;
         public GameObject[] wayPoints;
         public GameObject target;
@@ -88,6 +88,7 @@ namespace Brendan
             {
                 getTarget();
             }
+            anim.SetBool("IsWalking", true);
         }
         public float distanceToTarget()
         {
@@ -101,6 +102,7 @@ namespace Brendan
             astar.FindPath(transform.position, player.transform.position, gameObject);
             rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
             Debug.Log(grid.MovementCalculator(gameObject));
+            anim.SetBool("IsWalking", true);
         }
 
         //private void OnDrawGizmos()
