@@ -33,7 +33,7 @@ public class Inventory : MonoBehaviour
     //-------------------------Farhan's Code-------------------------
 
 
-    private void Start()
+    void Start()
     {
         //-------------------------Farhan's Code-------------------------
         //Im having some trouble figuring out how to simply use the maxStackSize value from the Item Script

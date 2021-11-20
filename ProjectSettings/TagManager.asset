@@ -8,6 +8,7 @@ TagManager:
   - Breakable
   - Gem
   - Coin
+  - ColliderForTutorial
   layers:
   - Default
   - TransparentFX

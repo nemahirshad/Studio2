@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
     public GameObject[] popUps;
     private int i;
     private int countForInput;
+    public GameObject jumpObj;
 
 
     void Start()
     {
        countForInput = 0;
+       jumpObj.SetActive(false);
     }
 
     public void Update()
@@ -59,6 +62,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     Debug.Log("worgehdks");
                     i++;
+                    jumpObj.SetActive(true);
                 }
             }
         }
@@ -66,6 +70,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return ))
             {
+                jumpObj.SetActive(false);
                 i++;
             }
         }
