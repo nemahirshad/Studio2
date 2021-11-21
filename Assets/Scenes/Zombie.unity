@@ -280,7 +280,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -495,8 +495,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1160108270}
-  - component: {fileID: 1160108271}
   - component: {fileID: 1160108272}
+  - component: {fileID: 1160108271}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -527,14 +527,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1160108269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 109384b6add19a640ad59316c46aae69, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea7b2e5ebbcd3d4cb1115f5916ab301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unwalkableMask:
+  WallLayer:
     serializedVersion: 2
-    m_Bits: 256
-  gridWorldSize: {x: 200, y: 200}
-  nodeRadius: 0.5
+    m_Bits: 8
+  gridSize: {x: 200, y: 200}
+  fNodeRadius: 1
+  fDistanceBetweenNode: 1
 --- !u!114 &1160108272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,10 +545,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1160108269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10490fab71824bf45bed9eb1dfd45532, type: 3}
+  m_Script: {fileID: 11500000, guid: e9bcd25929004ee4294668752d0f2168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 1160108271}
 --- !u!1 &1314586724
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1314586725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -637,7 +637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314586724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.26, y: 1, z: -7.04}
+  m_LocalPosition: {x: 25.13, y: 1, z: 53.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -676,9 +676,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1625514231}
-  - component: {fileID: 1625514227}
   - component: {fileID: 1625514232}
   - component: {fileID: 1625514228}
+  - component: {fileID: 1625514227}
+  - component: {fileID: 1625514229}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -698,16 +699,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a54505ccdc1aeb4b9628e85161fd807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  astar: {fileID: 1160108272}
+  grid: {fileID: 1160108271}
   anim: {fileID: 1387969681}
   target: {fileID: 1314586724}
   player: {fileID: 1314586724}
   range: 0.5
   point: {fileID: 415678787}
-  astar: {fileID: 1160108272}
-  grid: {fileID: 1160108271}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   wanderTimer: 2
   wanderCountdown: 0
   chaseCountdown: 3
@@ -732,6 +733,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1625514229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625514226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7e148a09007f34aaf0822ca53076b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1625514231
 Transform:
   m_ObjectHideFlags: 0
@@ -761,5 +774,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0

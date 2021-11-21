@@ -32,11 +32,17 @@ public class ZombieAgent : BehaviorTree
         rootNode.childrenNodes[0].childrenNodes.Add(new AttackNode());
 
 		point.position = transform.position + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)) * wanderForce;
+
+        rb = GetComponent<Rigidbody>();
 	}
 
     public override void Update()
     {
         rootNode.Execute(this);
 		wanderCountdown -= Time.deltaTime;
+
+        astar.FindPath(transform.position, point.transform.position, gameObject);
+        rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
+        Debug.Log(grid.MovementCalculator(gameObject));
     }
 }

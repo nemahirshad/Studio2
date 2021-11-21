@@ -15,7 +15,7 @@ namespace Brendan
 
     public class Golams_Ai : MonoBehaviour
     {
-
+        public GameObject attackCol;
         public Animator anim;
         public float speed;
         public GameObject[] wayPoints;
@@ -61,6 +61,18 @@ namespace Brendan
                     {
                         ChangeState(State.Patrol);
                     }
+                    if (Vector3.Distance(player.transform.position, transform.position) < attackRange)
+                    {
+                        ChangeState(State.Attack);
+                    }
+                    break;
+                case State.Attack:
+                    Attacking();
+                    if (Vector3.Distance(player.transform.position, transform.position) > attackRange)
+                    {
+                        ChangeState(State.Chase);
+                        attackCol.SetActive(false);
+                    }
                     break;
             }
 
@@ -103,6 +115,12 @@ namespace Brendan
             rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
             Debug.Log(grid.MovementCalculator(gameObject));
             anim.SetBool("IsWalking", true);
+        }
+
+        public void Attacking()
+        {
+            attackCol.SetActive(true);
+            anim.SetBool("IsAttacking", true);
         }
 
         //private void OnDrawGizmos()
