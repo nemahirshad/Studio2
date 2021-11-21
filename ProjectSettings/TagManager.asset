@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Ground
   - Breakable
-  - Golem
+  - Gem
+  - Coin
+  - ColliderForTutorial
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - Wall
   - Water
   - UI
-  - 
-  - 
+  - Interactable
+  - Ground
   - 
   - 
   - 

@@ -1,3 +1,4 @@
+using Brendan;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,12 @@ using UnityEngine;
 public class BehaviorTree : MonoBehaviour
 {
     protected Node rootNode;
+
+    protected Rigidbody rb;
+
+    public Astar astar;
+
+    public Brendan.Grid grid;
 
     public Animator anim;
 

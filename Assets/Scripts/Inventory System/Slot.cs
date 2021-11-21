@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
+    //public Inventory inventory;
     public Item slotsItem;
-    TPController player;
+    [SerializeField] GameObject player;
     Sprite defaultSprite;
     Text amountText;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     public void CustomStart()
     {
@@ -18,11 +24,13 @@ public class Slot : MonoBehaviour
     }
     public void DropItem()
     {
+        Vector3 playerPos = player.transform.position;
+
         if (slotsItem)
         {
             slotsItem.transform.parent = null;
             slotsItem.gameObject.SetActive(true);
-            slotsItem.transform.position = player.transform.position;
+            slotsItem.transform.position = new Vector3(playerPos.x + 1, playerPos.y, playerPos.z + 2);
         }
     }
     public void CheckForItem()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -12,11 +13,14 @@ public class HealthSystem : MonoBehaviour
 
     public int damage;          //This is mostly for testing purposes.
     public int gainHP;
+    public GameObject gameOver;
+  
 
     void Start()
     {
         //currentHealth = maxHealth;
         //This code might not be necessary if we want the player's HP to carry over from one level to another.
+        gameOver.SetActive(false);
     }
 
     void Update()
@@ -24,15 +28,16 @@ public class HealthSystem : MonoBehaviour
         //Checking if the player health exceeds the maximum amount of health they can have.
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
+        
 
 
-//---------------Testing HP System-----------------
+/*---------------Testing HP System-----------------
         if (Input.GetKeyDown(KeyCode.Space))
             LoseHP(damage);
 
         if (Input.GetKeyDown(KeyCode.H))
             GainHP(gainHP);
-//---------------Testing HP System-----------------
+---------------Testing HP System-----------------*/
 
 
         for (int i = 0; i < hearts.Length; i++)
@@ -88,7 +93,7 @@ public class HealthSystem : MonoBehaviour
                 }*/
 
         //Checks to see if the damage dealt is greater than the max health. If it is, it lets the player have one heart, to ensure they have a chance at survival.
-        if (damage >= maxHealth)
+        /*if (damage >= maxHealth)
         {
             currentHealth -= maxHealth - 1;
 
@@ -97,7 +102,7 @@ public class HealthSystem : MonoBehaviour
                 currentHealth = 0;
                 PlayerDeath();
             }
-        }
+        }*/
 
         //Checks if the damage dealt is less than max health. If true, the player loses hp that is equal to the amount of damage recieved.
         if (damage < maxHealth)
@@ -123,9 +128,16 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    public void PlayerDeath()
+    public void PlayerDeath( )
     {
-        //insert player death code here. Can be removed/modified if necessary. I just wanted to cover all potential outcomes.
-        //We could have this function take a parameter that can be used to determine where the player will spawn once they restart the game.
+       gameOver.SetActive(true);
+    }
+    public void RespawnButton()
+    {
+        SceneManager.LoadScene("SpaceShip");
+    }
+    public void MainMenuButton()
+    {
+        //SceneManager.LoadScene("Mainmenu");
     }
 }
