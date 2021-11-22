@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -12,11 +13,14 @@ public class HealthSystem : MonoBehaviour
 
     public int damage;          //This is mostly for testing purposes.
     public int gainHP;
+    public GameObject gameOver;
+  
 
     void Start()
     {
         //currentHealth = maxHealth;
         //This code might not be necessary if we want the player's HP to carry over from one level to another.
+        gameOver.SetActive(false);
     }
 
     void Update()
@@ -24,6 +28,7 @@ public class HealthSystem : MonoBehaviour
         //Checking if the player health exceeds the maximum amount of health they can have.
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
+        
 
 
 /*---------------Testing HP System-----------------
@@ -123,9 +128,16 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    public void PlayerDeath()
+    public void PlayerDeath( )
     {
-        //insert player death code here. Can be removed/modified if necessary. I just wanted to cover all potential outcomes.
-        //We could have this function take a parameter that can be used to determine where the player will spawn once they restart the game.
+       gameOver.SetActive(true);
+    }
+    public void RespawnButton()
+    {
+        SceneManager.LoadScene("SpaceShip");
+    }
+    public void MainMenuButton()
+    {
+        //SceneManager.LoadScene("Mainmenu");
     }
 }

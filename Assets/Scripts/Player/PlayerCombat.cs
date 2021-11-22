@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public Animator anim;
-
     public int damage;
 
     // Start is called before the first frame update
@@ -24,7 +22,12 @@ public class PlayerCombat : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Breakable"))
         {
-            collision.gameObject.GetComponent<breakable>().OnBreak();
+            collision.gameObject.GetComponent<Breakable>().OnBreak();
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyInfo>().TakeDamage(damage);
         }
     }
 

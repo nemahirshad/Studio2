@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
     public GameObject[] popUps;
     private int i;
     private int countForInput;
+    public GameObject jumpObj;
+
+
     void Start()
-    { 
-        countForInput = 0;
+    {
+       countForInput = 0;
+       jumpObj.SetActive(false);
     }
 
- 
-    void Update()
+    public void Update()
     {
         for (int i = 0; i < popUps.Length; i++)
         {
@@ -27,13 +31,10 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-
-
         if (i == 0)
         {
             if (Input.GetKeyDown(KeyCode.Return)) // INTRO TO SKIP
             {
-                Debug.Log("works");
                 i++;
             }
         }
@@ -61,6 +62,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     Debug.Log("worgehdks");
                     i++;
+                    jumpObj.SetActive(true);
                 }
             }
         }
@@ -68,6 +70,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return ))
             {
+                jumpObj.SetActive(false);
                 i++;
             }
         }
@@ -97,6 +100,5 @@ public class TutorialManager : MonoBehaviour
                 i++;
             }
         }
-        Debug.Log(countForInput);
     }
 }

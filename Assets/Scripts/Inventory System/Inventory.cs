@@ -9,7 +9,9 @@ public class Inventory : MonoBehaviour
     public GemScriptableObject gems;
 
     public GameObject inventoryObject;
+    public GameObject rewardSystem;
     public GameObject followMouseImage;
+  
 
     public Slot[] slots;
 
@@ -22,8 +24,8 @@ public class Inventory : MonoBehaviour
     public List<Item> torchfuelPickup;
     public List<Item> shipfuelPickup;
 
-    int scoreCount;
-    int highScore;
+    public int scoreCount;
+    public int highScore;
 
     //These bools can be set to false when the player inventory does not contain any item corresponding to their respective bools.
     bool canUseHealth = false;
@@ -32,7 +34,7 @@ public class Inventory : MonoBehaviour
     //-------------------------Farhan's Code-------------------------
 
 
-    private void Start()
+    void Start()
     {
         //-------------------------Farhan's Code-------------------------
         //Im having some trouble figuring out how to simply use the maxStackSize value from the Item Script
@@ -48,7 +50,7 @@ public class Inventory : MonoBehaviour
         //-------------------------Farhan's Code-------------------------
 
         inventoryObject.SetActive(false);
-
+        followMouseImage.SetActive(false);
         foreach (Slot i in slots)
         {
             i.CustomStart();
@@ -59,14 +61,14 @@ public class Inventory : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            
             inventoryObject.SetActive(!inventoryObject.activeInHierarchy);
+            
         }
-
-        if (inventoryObject.activeInHierarchy)
-        {
+        if(inventoryObject.activeInHierarchy || rewardSystem.activeInHierarchy)
+            {
             followMouseImage.SetActive(true);
-            Cursor.lockState = CursorLockMode.Confined;
-        }
+            Cursor.lockState = CursorLockMode.Confined; } 
         else { followMouseImage.SetActive(false); Cursor.lockState = CursorLockMode.Locked; }
 
         foreach (Slot i in slots)
