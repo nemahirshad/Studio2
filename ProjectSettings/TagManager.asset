@@ -8,6 +8,7 @@ TagManager:
   - Breakable
   - Gem
   - Coin
+  - FlockEntities
   layers:
   - Default
   - TransparentFX
