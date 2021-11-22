@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RobotInteractable : Interactable
 {
-    // Start is called before the first frame update
+    public GameObject CombatPopup;
+  
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         
@@ -19,5 +21,7 @@ public class RobotInteractable : Interactable
     public override void Interact()
     {
         //Play tutorial
+
+
     }
 }
