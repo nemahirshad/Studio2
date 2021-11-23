@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 4710611665491024631}
   - component: {fileID: 5389893363470397931}
   - component: {fileID: 999044254}
+  - component: {fileID: 4945578709756525612}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -244,11 +245,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   healthSystem: {fileID: 5389893363470397931}
+  winScreen: {fileID: 0}
   scoreText: {fileID: 0}
+  highscoreText: {fileID: 0}
+  finalHighScore: {fileID: 0}
   healthPickup: []
   torchfuelPickup: []
   shipfuelPickup: []
   scoreCount: 0
+  highScore: 0
 --- !u!114 &5389893363470397931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,6 +295,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   detectionRange: 50
+--- !u!114 &4945578709756525612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710611665491024639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8628b9b6be78734997350247009ebe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardSystem: {fileID: 0}
+  hs: {fileID: 0}
+  rewardItems: []
+  claimButton: {fileID: 0}
+  closeButton: {fileID: 0}
+  prevHighScore: 0
+  initialHighScore: 0
 --- !u!1 &4710611666046455065
 GameObject:
   m_ObjectHideFlags: 0

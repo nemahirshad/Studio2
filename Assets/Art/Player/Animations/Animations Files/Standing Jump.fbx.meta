@@ -59,14 +59,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.31965244
+      - time: 0.03165244
         functionName: StartJumping
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: f8f5b6b294fd0494890a51855ac5666f, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.45379925
+      - time: 0.17779925
         functionName: StopJumping
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: f8f5b6b294fd0494890a51855ac5666f, type: 3}

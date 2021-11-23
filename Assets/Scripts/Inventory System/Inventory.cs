@@ -9,7 +9,6 @@ public class Inventory : MonoBehaviour
     public GemScriptableObject gems;
 
     public GameObject inventoryObject;
-    public GameObject rewardSystem;
     public GameObject followMouseImage;
   
 
@@ -17,8 +16,12 @@ public class Inventory : MonoBehaviour
 
     //-------------------------Farhan's Code-------------------------
     public HealthSystem healthSystem;
+    //public PlayerInfo playerInfo;
+
+    public GameObject winScreen;
     public Text scoreText;
     public Text highscoreText;
+    public Text finalHighScore;
 
     public List<Item> healthPickup;
     public List<Item> torchfuelPickup;
@@ -44,8 +47,7 @@ public class Inventory : MonoBehaviour
         shipfuelPickup = new List<Item>();
 
         scoreCount = 0;
-        highScore = 3;
-        highscoreText.text = "Highscore: " + highScore;
+        highScore = 6;
         UpdateScore();
         //-------------------------Farhan's Code-------------------------
 
@@ -58,23 +60,31 @@ public class Inventory : MonoBehaviour
     }
     private void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             
             inventoryObject.SetActive(!inventoryObject.activeInHierarchy);
             
         }
-        if(inventoryObject.activeInHierarchy || rewardSystem.activeInHierarchy)
+
+        if(inventoryObject.activeInHierarchy || winScreen.activeInHierarchy)
             {
             followMouseImage.SetActive(true);
-            Cursor.lockState = CursorLockMode.Confined; } 
+            Cursor.lockState = CursorLockMode.Confined; 
+        }
+        
         else { followMouseImage.SetActive(false); Cursor.lockState = CursorLockMode.Locked; }
 
         foreach (Slot i in slots)
             i.CheckForItem();
 
         //-------------------------Farhan's Code-------------------------
+        if (Input.GetKeyDown(KeyCode.L))    //For testing Win State
+        {
+            if (scoreCount >= highScore)
+                EndGame();
+        }
+
         if (canUseHealth)
         {
             if (Input.GetKeyDown(KeyCode.H))
@@ -148,7 +158,7 @@ public class Inventory : MonoBehaviour
             if (amountInStack <= amountThatCanBeAdded)
             {
                 i.amountInStack += amountInStack;
-                Destroy(itemToBeAdded.gameObject);
+                itemToBeAdded.gameObject.SetActive(false);      //Should be destroyed but causes issues with reward system.
                 return;
             }
             else
@@ -220,8 +230,19 @@ public class Inventory : MonoBehaviour
         if (highScore < scoreCount)
         {
             highScore = scoreCount;
+            //playerInfo.AddScore(highScore);
             highscoreText.text = "Highscore: " + highScore;
         }
+    }
+
+    public void EndGame()
+    {
+        Debug.Log("You Won");
+        //gameObject.SetActive(false);
+        winScreen.SetActive(true);
+        finalHighScore.text = "Highscore: " + highScore;
+        inventoryObject.SetActive(true);
+        UpdateScore();
     }
     //-------------------------Farhan's Code-------------------------
 
@@ -247,6 +268,7 @@ public class Inventory : MonoBehaviour
         else if (col.CompareTag("Gem"))
         {
             gems.value++;
+            EndGame();
         }
     }
 }

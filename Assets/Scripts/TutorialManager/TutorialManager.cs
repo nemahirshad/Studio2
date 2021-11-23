@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
+    public GameObject rewardSystem;
     public GameObject[] popUps;
     private int i;
     private int countForInput;
@@ -98,6 +99,14 @@ public class TutorialManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
+            }
+        }
+        else if (i == 7) //End
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                i++;
+                rewardSystem.SetActive(true);
             }
         }
     }

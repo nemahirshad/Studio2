@@ -6,7 +6,9 @@ public class PlayerInfo : MonoBehaviour
 {
     public int health;
 
+    public int highScore;
     public List<Score> scores = new List<Score>();
+
 
     public void AddScore(Score sc)
     {
