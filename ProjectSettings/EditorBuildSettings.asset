@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SpaceShip.unity
+    path: Assets/Scenes/Levels/SpaceShip.unity
     guid: 199175dfe6d1f8447b4c44c8f649b400
   - enabled: 1
-    path: Assets/Scenes/Level.unity
+    path: Assets/Scenes/Levels/Level.unity
     guid: d90521b2caa18ed4aad2cbc26f876649
   m_configObjects: {}
