@@ -123,6 +123,19 @@ namespace Brendan
             anim.SetBool("IsAttacking", true);
         }
 
+        private void onDeath()
+        {
+            Destroy(gameObject);
+        }
+        public void onDeathEffects()
+        {
+            // Play Particles
+            // Play Sound
+            // Add Score
+            // Switch Animation
+            Destroy(gameObject);
+        }
+
         //private void OnDrawGizmos()
         //{
         //    if (target)
