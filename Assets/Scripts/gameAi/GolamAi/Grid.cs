@@ -12,6 +12,9 @@ namespace Brendan
         public float fDistanceBetweenNode;
         private float fNodeDiameter;
         private int gridSizeX, gridSizeY;
+        [SerializeField] Grid[] grids;
+        [SerializeField] Astar[] astarss;
+
 
         Node[,] nodeArray;
         //public List<Node> shortestPath;
@@ -19,6 +22,8 @@ namespace Brendan
 
         void Awake()
         {
+            grids = GameObject.FindObjectsOfType<Grid>();
+            astarss = GameObject.FindObjectsOfType<Astar>();
             fNodeDiameter = fNodeRadius * 2;
             gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);
             gridSizeY = Mathf.RoundToInt(gridSize.y / fNodeDiameter);
