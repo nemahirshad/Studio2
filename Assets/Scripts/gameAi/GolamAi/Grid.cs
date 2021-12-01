@@ -32,20 +32,6 @@ namespace Brendan
 
         }
 
-        public Vector3 MovementCalculator(GameObject AI)
-        {
-            if (AI.GetComponent<AIPathHolder>().shortestPath != null)
-            {
-                Vector3 dir = AI.GetComponent<AIPathHolder>().shortestPath[0].worldPosition - AI.transform.position + new Vector3(0, 0.5f, 0);
-                dir.Normalize();
-                return dir;
-            }
-            else
-            {
-                return Vector3.zero;
-            }
-        }
-
         void CreateGrid()
         {
             nodeArray = new Node[gridSizeX, gridSizeY];
@@ -132,33 +118,33 @@ namespace Brendan
 
             return nodeArray[_x, _y];
         }
-        private void OnDrawGizmos()
-        {
-            Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
+        //private void OnDrawGizmos()
+        //{
+        //    Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
 
-            if (nodeArray != null)
-            {
-                foreach (Node n in nodeArray)
-                {
-                    if (n.bIsWall)
-                    {
-                        Gizmos.color = Color.white;
-                    }
-                    else
-                    {
-                        Gizmos.color = Color.black;
-                    }
+        //    if (nodeArray != null)
+        //    {
+        //        foreach (Node n in nodeArray)
+        //        {
+        //            if (n.bIsWall)
+        //            {
+        //                Gizmos.color = Color.white;
+        //            }
+        //            else
+        //            {
+        //                Gizmos.color = Color.black;
+        //            }
 
-                    //if (shortestPath != null)
-                    //{
-                    //    if (shortestPath.Contains(n))
-                    //    {
-                    //        Gizmos.color = Color.green;
-                    //    }
-                    //}
-                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (fNodeDiameter - fDistanceBetweenNode));
-                }
-            }
-        }
+        //            //if (shortestPath != null)
+        //            //{
+        //            //    if (shortestPath.Contains(n))
+        //            //    {
+        //            //        Gizmos.color = Color.green;
+        //            //    }
+        //            //}
+        //            Gizmos.DrawCube(n.worldPosition, Vector3.one * (fNodeDiameter - fDistanceBetweenNode));
+        //        }
+        //    }
+        //}
     }
 }

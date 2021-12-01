@@ -20,6 +20,17 @@ public class WeaponDamage : MonoBehaviour
                 hit.collider.GetComponent<Brendan.Golams_Ai>().onDeathEffects();
                 Debug.Log("GOLEM HIT");
             }
+            if (hit.collider.tag == "Breakable")
+            {
+                hit.collider.GetComponent<Breakable>().OnBreak();
+                Debug.Log("Vase Break");
+            }
+            //if (hit.collider.tag == "Golem")
+            //{
+            //    hit.collider.GetComponent<Brendan.Golams_Ai>().onDeathEffects();
+            //    Debug.Log("GOLEM HIT");
+            //}
+
         }
     }
 }
