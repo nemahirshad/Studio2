@@ -10,10 +10,12 @@ public class TPController : MonoBehaviour
     public float groundDis = 0.4f;
     public LayerMask groundMask;
 	public bool isOnGround = true;
-    Vector3 velocity;
+    public Vector3 velocity;
     public float gravity = -9.08f;
     public float jumpHeight = 2f;
     public Animator anim;
+
+    bool jump = false;
 
     public void Update()
 	{
@@ -51,9 +53,12 @@ public class TPController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
             {
-
-                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
                 anim.SetTrigger("Jump");
+            }
+
+            if(jump)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
             }
 
             // crouch
@@ -67,6 +72,11 @@ public class TPController : MonoBehaviour
             }
 
         }
+    }
+
+    public void Jump()
+    {
+        jump = true;
     }
 
     private void OnCollisionEnter(Collision collision)
