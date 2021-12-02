@@ -129,10 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCol: {fileID: 0}
   anim: {fileID: 0}
-  speed: 15
+  speed: 35
   wayPoints:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   target: {fileID: 0}
   rb: {fileID: 939506436220003371}

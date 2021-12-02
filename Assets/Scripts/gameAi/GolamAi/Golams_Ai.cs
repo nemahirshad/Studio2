@@ -41,6 +41,7 @@ namespace Brendan
             aiPath = GetComponent<AIPathHolder>();
             waypointAI = GetComponent<WaypointAI>();
             CurrentState = State.Patrol;
+            
         }
 
         void Update()
@@ -106,13 +107,13 @@ namespace Brendan
             if (target == null)
             {
                 getTarget();
-                //target = wayPoints[0];
+               //target = wayPoints[0];
 
                 astar.FindPath(transform.position, target.transform.position, gameObject);
-                waypointAI.MoveTowards(aiPath.shortestPath, rb, speed, 1);
+                waypointAI.MoveTowards(aiPath.shortestPath, rb, speed, 2.2f);
             }
 
-            /// Vector3 direction = (aiPath.shortestPath[0].worldPosition - transform.position).normalized;
+            //Vector3 direction = (aiPath.shortestPath[0].worldPosition - transform.position).normalized;
             // rb.AddForce(direction * speed * Time.deltaTime, ForceMode.Impulse);
 
             //  anim.SetBool("IsWalking", true);

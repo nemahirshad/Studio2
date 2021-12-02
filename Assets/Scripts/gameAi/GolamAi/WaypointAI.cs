@@ -37,7 +37,7 @@ namespace Brendan
                             return;
                         }
                     }
-
+                    // probably here or occuring from the minimumdistancetotarget from the function below
                     Vector3 direction = (waypoints[index].worldPosition - currentRigidbody.position).normalized;
                     currentRigidbody.AddForce(direction * speed * Time.deltaTime, ForceMode.Impulse);
                 }

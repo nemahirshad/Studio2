@@ -13164,7 +13164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCol: {fileID: 0}
   anim: {fileID: 0}
-  speed: 15
+  speed: 30
   wayPoints:
   - {fileID: 311824390}
   - {fileID: 1588362523}

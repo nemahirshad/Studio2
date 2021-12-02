@@ -118,33 +118,27 @@ namespace Brendan
 
             return nodeArray[_x, _y];
         }
-        //private void OnDrawGizmos()
-        //{
-        //    Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
 
-        //    if (nodeArray != null)
-        //    {
-        //        foreach (Node n in nodeArray)
-        //        {
-        //            if (n.bIsWall)
-        //            {
-        //                Gizmos.color = Color.white;
-        //            }
-        //            else
-        //            {
-        //                Gizmos.color = Color.black;
-        //            }
+            if (nodeArray != null)
+            {
+                foreach (Node n in nodeArray)
+                {
+                    if (n.bIsWall)
+                    {
+                        Gizmos.color = Color.white;
+                    }
+                    else
+                    {
+                        Gizmos.color = Color.black;
+                    }
 
-        //            //if (shortestPath != null)
-        //            //{
-        //            //    if (shortestPath.Contains(n))
-        //            //    {
-        //            //        Gizmos.color = Color.green;
-        //            //    }
-        //            //}
-        //            Gizmos.DrawCube(n.worldPosition, Vector3.one * (fNodeDiameter - fDistanceBetweenNode));
-        //        }
-        //    }
-        //}
+                  
+                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (fNodeDiameter - fDistanceBetweenNode));
+                }
+            }
+        }
     }
 }
