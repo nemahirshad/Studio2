@@ -50,10 +50,10 @@ namespace Brendan
             {
                 case State.Patrol:
                     Patrol();
-                    /*if (Vector3.Distance(player.transform.position, transform.position) < detectionRange)
+                    if (Vector3.Distance(player.transform.position, transform.position) < detectionRange)
                     {
                         ChangeState(State.Chase);
-                    }*/
+                    }
                     break;
 
                 case State.Chase:
@@ -107,7 +107,7 @@ namespace Brendan
             if (target == null)
             {
                 getTarget();
-               //target = wayPoints[0];
+                //target = wayPoints[0];
 
                 astar.FindPath(transform.position, target.transform.position, gameObject);
                 waypointAI.MoveTowards(aiPath.shortestPath, rb, speed, 2.2f);
@@ -121,9 +121,9 @@ namespace Brendan
 
         public void Chasing()
         {
-            //astar.TargetPosition = player.transform;
-            //astar.FindPath(transform.position, player.transform.position, gameObject);
-            //rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
+            
+            astar.FindPath(transform.position, player.transform.position, gameObject);
+            waypointAI.MoveTowards(aiPath.shortestPath, rb, speed, 2.2f);
             //Debug.Log(grid.MovementCalculator(gameObject));
             //  anim.SetBool("IsWalking", true);
         }
