@@ -19,6 +19,12 @@ public class TPController : MonoBehaviour
 
     public void Update()
 	{
+        //Stop player input until animation is over
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("FinalAttackAnimation"))
+        {
+            return;
+        }
+
         //Attack
         if (Input.GetMouseButtonDown(0))
         {

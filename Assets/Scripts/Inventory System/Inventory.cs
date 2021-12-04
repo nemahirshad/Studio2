@@ -10,7 +10,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject inventoryObject;
     public GameObject followMouseImage;
-  
+
+    public PlayerData data;
 
     public Slot[] slots;
 
@@ -39,6 +40,7 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        data.LoadInventory(this);
         //-------------------------Farhan's Code-------------------------
         //Im having some trouble figuring out how to simply use the maxStackSize value from the Item Script
         //So Im gonna leave it empty for now. Will need to work with Dylan to solve this later.
@@ -62,13 +64,11 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            
-            inventoryObject.SetActive(!inventoryObject.activeInHierarchy);
-            
+            inventoryObject.SetActive(!inventoryObject.activeInHierarchy);   
         }
 
         if(inventoryObject.activeInHierarchy || winScreen.activeInHierarchy)
-            {
+        {
             followMouseImage.SetActive(true);
             Cursor.lockState = CursorLockMode.Confined; 
         }
@@ -243,6 +243,7 @@ public class Inventory : MonoBehaviour
         finalHighScore.text = "Highscore: " + highScore;
         inventoryObject.SetActive(true);
         UpdateScore();
+        SaveSystem.SavePlayer(healthSystem, this);
     }
     //-------------------------Farhan's Code-------------------------
 

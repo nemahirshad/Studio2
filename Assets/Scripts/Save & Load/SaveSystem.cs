@@ -4,12 +4,12 @@ using System.IO;
 
 public static class SaveSystem
 {
-    public static void SavePlayer(PlayerInfo player)
+    public static void SavePlayer(HealthSystem player, Inventory inventory)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.fun";
         FileStream stream = new FileStream(path, FileMode.Create);
-        PlayerData data = new PlayerData(player);
+        PlayerData data = new PlayerData(player, inventory);
         formatter.Serialize(stream, data);
         stream.Close();
     }

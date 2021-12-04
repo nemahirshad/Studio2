@@ -9,8 +9,6 @@ public class gemManager : MonoBehaviour
     public List<GameObject> vases;
     [SerializeField]List<GameObject> gemVases;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +17,7 @@ public class gemManager : MonoBehaviour
         for (int i = 0; i < gemNumber; i++)
         {
             int Rand = Random.Range(0, vases.Count);
-            vases[Rand].GetComponent<breakable>().hasGem = true;
+            vases[Rand].GetComponent<Breakable>().hasGem = true;
             gemVases.Add(vases[Rand]);
             vases.RemoveAt(Rand); 
         }

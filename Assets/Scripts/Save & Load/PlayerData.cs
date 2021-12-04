@@ -5,12 +5,29 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData : MonoBehaviour
 {
-    public int health;
-    public int gems;
+    int health;
+    int gems;
+    int highscore;
 
-    public PlayerData(PlayerInfo player)
+    void Start()
     {
-        this.health = player.health;
+        health = SaveSystem.LoadPlayer().health;
+        highscore = SaveSystem.LoadPlayer().highscore;
+    }
 
+    public PlayerData(HealthSystem player, Inventory inventory)
+    {
+        this.health = player.currentHealth;
+        this.highscore = inventory.highScore;
+    }
+
+    public void LoadPlayerHealth(HealthSystem player)
+    {
+        player.currentHealth = this.health;
+    }
+
+    public void LoadInventory(Inventory inventory)
+    {
+        inventory.highScore = this.highscore;
     }
 }

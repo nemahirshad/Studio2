@@ -47,7 +47,6 @@ public class RewardSystem : MonoBehaviour
 
    public  void ClaimReward()
     {
-        
         if (hs.highScore >= 15)
         {
             Debug.Log("claimed");

@@ -14,10 +14,12 @@ public class HealthSystem : MonoBehaviour
     public int damage;          //This is mostly for testing purposes.
     public int gainHP;
     public GameObject gameOver;
-  
+
+    public PlayerData data;
 
     void Start()
     {
+        data.LoadPlayerHealth(this);
         //currentHealth = maxHealth;
         //This code might not be necessary if we want the player's HP to carry over from one level to another.
         gameOver.SetActive(false);
