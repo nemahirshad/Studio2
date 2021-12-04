@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Breakable : MonoBehaviour
+public class breakable : MonoBehaviour
 {
     public bool hasGem;
     [SerializeField] GameObject Gem, health, fuel;
@@ -12,18 +12,19 @@ public class Breakable : MonoBehaviour
    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OnBreak();
-            Destroy(gameObject);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    OnBreak();
+        //}
     }
 
     public void OnBreak()
     {
+        Debug.Log("attack");
         if (hasGem == true)
         {
             Instantiate(Gem, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
         else
         {

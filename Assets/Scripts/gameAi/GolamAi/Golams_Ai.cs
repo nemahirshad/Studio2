@@ -27,9 +27,9 @@ namespace Brendan
         public float attackRange;
         private State CurrentState; //Local variable that represents our state
         public Astar astar;
-        public Grid grid;
+        public GridManager grid;
         AIPathHolder aiPath;
-
+        WaypointAI waypointAI;
 
         public void ChangeState(State newState)
         {
@@ -38,14 +38,14 @@ namespace Brendan
 
         private void Start()
         {
+            aiPath = GetComponent<AIPathHolder>();
+            waypointAI = GetComponent<WaypointAI>();
             CurrentState = State.Patrol;
+            
         }
-
 
         void Update()
         {
-
-
             switch (CurrentState)
             {
                 case State.Patrol:
@@ -55,6 +55,7 @@ namespace Brendan
                         ChangeState(State.Chase);
                     }
                     break;
+
                 case State.Chase:
                     Chasing();
                     if (Vector3.Distance(player.transform.position, transform.position) > chaseRange)
@@ -66,6 +67,7 @@ namespace Brendan
                         ChangeState(State.Attack);
                     }
                     break;
+
                 case State.Attack:
                     Attacking();
                     if (Vector3.Distance(player.transform.position, transform.position) > attackRange)
@@ -77,57 +79,67 @@ namespace Brendan
             }
 
             Debug.Log(CurrentState);
-
         }
 
         void getTarget()
         {
             target = wayPoints[Random.Range(0, wayPoints.Length)];
+
+            while (true)
+            {
+                if (Vector3.Distance(transform.position, target.transform.position) < 3)
+                    target = wayPoints[Random.Range(0, wayPoints.Length)];
+                else
+                    break;
+            }
         }
-
-
+   
         void Patrol()
         {
-            if (!target)
+            if (target != null)
+            {
+                if (waypointAI.TargetReached)
+                {
+                    target = null;
+                }  
+            }
+
+            if (target == null)
             {
                 getTarget();
-            }
-            astar.FindPath(transform.position, target.transform.position, gameObject);
+                //target = wayPoints[0];
 
-            rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
-
-            if (distanceToTarget() <= 3)
-            {
-                getTarget();
+                astar.FindPath(transform.position, target.transform.position, gameObject);
+                waypointAI.MoveTowards(aiPath.shortestPath, rb, speed, 2.2f);
             }
-            anim.SetBool("IsWalking", true);
-        }
-        public float distanceToTarget()
-        {
-            float dist = Vector3.Distance(gameObject.transform.position, target.transform.position);
-            return dist;
+
+            //Vector3 direction = (aiPath.shortestPath[0].worldPosition - transform.position).normalized;
+            // rb.AddForce(direction * speed * Time.deltaTime, ForceMode.Impulse);
+
+            //  anim.SetBool("IsWalking", true);
         }
 
         public void Chasing()
         {
-            //astar.TargetPosition = player.transform;
+            
             astar.FindPath(transform.position, player.transform.position, gameObject);
-            rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
-            Debug.Log(grid.MovementCalculator(gameObject));
-            anim.SetBool("IsWalking", true);
+            waypointAI.MoveTowards(aiPath.shortestPath, rb, speed, 2.2f);
+            //Debug.Log(grid.MovementCalculator(gameObject));
+            //  anim.SetBool("IsWalking", true);
         }
 
         public void Attacking()
         {
             attackCol.SetActive(true);
-            anim.SetBool("IsAttacking", true);
+            //  anim.SetBool("IsAttacking", true);
         }
 
-        private void onDeath()
+        private void OnDeath()
         {
             Destroy(gameObject);
         }
-        public void onDeathEffects()
+
+        public void OnDeathEffects()
         {
             // Play Particles
             // Play Sound
@@ -145,6 +157,5 @@ namespace Brendan
         //    }
 
         //}
-
     }
 }

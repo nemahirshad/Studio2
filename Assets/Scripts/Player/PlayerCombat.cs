@@ -22,7 +22,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Breakable"))
         {
-            collision.gameObject.GetComponent<Breakable>().OnBreak();
+            collision.gameObject.GetComponent<breakable>().OnBreak();
         }
 
         if (collision.gameObject.CompareTag("Enemy"))

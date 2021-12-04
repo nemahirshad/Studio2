@@ -9,6 +9,7 @@ TagManager:
   - Gem
   - Coin
   - FlockEntities
+  - Golem
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Wall
   - Water
   - UI
-  - 
-  - 
+  - Weapon Ray
+  - Player
   - 
   - 
   - 

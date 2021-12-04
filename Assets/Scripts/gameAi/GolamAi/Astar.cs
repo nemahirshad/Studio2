@@ -7,12 +7,11 @@ namespace Brendan
 {
     public class Astar : MonoBehaviour
     {
-        Grid gridReference;
-        private Transform StartPosition;
-        private Transform TargetPosition;
-        private void Awake()
+        GridManager gridReference;
+
+        private void Start()
         {
-            gridReference = GameObject.FindObjectOfType<Grid>();
+            gridReference = GameObject.FindObjectOfType<GridManager>();
         }
 
         // Update is called once per frame
@@ -23,8 +22,10 @@ namespace Brendan
 
         public void FindPath(Vector3 StartPos, Vector3 targetPos, GameObject AI)
         {
-            Node startNode = gridReference.nodeFromeWorldPoint(StartPos);
-            Node targetNode = gridReference.nodeFromeWorldPoint(targetPos);
+            //start should be -51, 0, -18
+            //end should be -53, 0, -32
+            Node startNode = gridReference.nodeFromeWorldPoint(StartPos); //worldPosition = "(-85.0, 0.0, -28.0)"
+            Node targetNode = gridReference.nodeFromeWorldPoint(targetPos); //worldPosition = "(-85.0, 0.0, -42.0)"
 
             List<Node> openList = new List<Node>();
             HashSet<Node> closedList = new HashSet<Node>();
@@ -39,6 +40,7 @@ namespace Brendan
                     {
                         currentNode = openList[i];
                     }
+                    
                 }
                 openList.Remove(currentNode);
                 closedList.Add(currentNode);
