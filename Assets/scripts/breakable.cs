@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Breakable : MonoBehaviour
+public class breakable : MonoBehaviour
 {
     public bool hasGem;
     [SerializeField] GameObject Gem, health, fuel;

@@ -599,7 +599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &229582770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 327085445}
   m_Layer: 0
   m_Name: OldHandTorch
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1729,7 +1729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &583498091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,7 +1855,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583498090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.93, y: 0.87, z: -7.46}
+  m_LocalPosition: {x: -6.09, y: 0.87, z: 0.24}
   m_LocalScale: {x: 1, y: 1.4421, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1974,7 +1974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &735213478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1989,18 +1989,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gems: {fileID: 0}
   inventoryObject: {fileID: 0}
-  rewardSystem: {fileID: 0}
   followMouseImage: {fileID: 0}
   slots:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   healthSystem: {fileID: 0}
+  winScreen: {fileID: 0}
   scoreText: {fileID: 0}
+  highscoreText: {fileID: 0}
+  finalHighScore: {fileID: 0}
   healthPickup: []
   torchfuelPickup: []
   shipfuelPickup: []
   scoreCount: 0
+  highScore: 0
 --- !u!143 &735213479
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2084,6 +2087,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   isOnGround: 1
+  velocity: {x: 0, y: 0, z: 0}
   gravity: -9.08
   jumpHeight: 2
   anim: {fileID: 1520033127}
@@ -2095,7 +2099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735213477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.444726, y: 1.52, z: -3.0091512}
+  m_LocalPosition: {x: -7.5, y: 1.52, z: -3.0091512}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 14673886}
@@ -3870,7 +3874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  rayDist: 1
+  rayDist: 5
   startPos: {fileID: 1554641373}
   endPos: {fileID: 822315830}
 --- !u!4 &1520033129

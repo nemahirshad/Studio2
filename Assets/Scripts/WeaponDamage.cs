@@ -10,19 +10,19 @@ public class WeaponDamage : MonoBehaviour
     
     // Start is called before the first frame update
 
-    public void attack()
+    public void Attack()
     {
         RaycastHit hit;
         if (Physics.Raycast(startPos.position,endPos.position,out hit,rayDist))
         {
             if (hit.collider.tag == "Golem")
             {
-                hit.collider.GetComponent<Brendan.Golams_Ai>().onDeathEffects();
+                hit.collider.GetComponent<Brendan.Golams_Ai>().OnDeathEffects();
                 Debug.Log("GOLEM HIT");
             }
             if (hit.collider.tag == "Breakable")
-            {
-                hit.collider.GetComponent<Breakable>().OnBreak();
+            { 
+                hit.collider.GetComponent<breakable>().OnBreak();
                 Debug.Log("Vase Break");
             }
             //if (hit.collider.tag == "Golem")
