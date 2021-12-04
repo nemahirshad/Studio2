@@ -11,7 +11,7 @@ public class BehaviorTree : MonoBehaviour
 
     public Astar astar;
 
-    public Brendan.Grid grid;
+    public Brendan.GridManager grid;
 
     public Animator anim;
 

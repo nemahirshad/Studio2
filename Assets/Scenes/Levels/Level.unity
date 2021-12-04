@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25043,7 +25043,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1338860279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ea7b2e5ebbcd3d4cb1115f5916ab301, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f99c207010360c4c8213d3441ae5f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WallLayer:
@@ -27519,7 +27519,7 @@ MonoBehaviour:
   chaseRange: 15
   attackRange: 0
   astar: {fileID: 1338860281}
-  grid: {fileID: 1338860280}
+  grid: {fileID: 0}
 --- !u!54 &1455029683
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30577,6 +30577,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 82beafc98cd634a29a3a098876e7b084, type: 3}
   m_PrefabInstance: {fileID: 626616076}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1638331280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1638331282}
+  - component: {fileID: 1638331281}
+  m_Layer: 0
+  m_Name: Flock System [rats]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1638331281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638331280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe10baa4d821154bb224b8b35b6c8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 4706511063064792425, guid: 2aac032bd73950e44b7b2482aa4c7d8f, type: 3}
+  flockAgents: []
+  initialAgentCount: 15
+  spawnradius: 10
+  neighborRadius: 1
+  avoidanceradius: 0.75
+  speed: 3.5
+  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
+  cohesionWeight: 1
+  avoidanceWeight: 5.5
+  alignmentWeight: 3
+  maintainFlockWeight: 5
+  lockYAxis: 0
+--- !u!4 &1638331282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638331280}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -39.4, y: 0, z: 14.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1824863930}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1638829504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 692d889cb58ff7741a72930ab5b0dcc4, type: 3}
@@ -33383,6 +33439,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 692d889cb58ff7741a72930ab5b0dcc4, type: 3}
+--- !u!1 &1773616889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773616891}
+  - component: {fileID: 1773616890}
+  m_Layer: 0
+  m_Name: Flock System [spider]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1773616890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773616889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe10baa4d821154bb224b8b35b6c8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 7051545284993558370, guid: 313250c3b192bb8498f1eb92e1066e42, type: 3}
+  flockAgents: []
+  initialAgentCount: 15
+  spawnradius: 10
+  neighborRadius: 1
+  avoidanceradius: 0.75
+  speed: 5
+  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
+  cohesionWeight: 1
+  avoidanceWeight: 5.5
+  alignmentWeight: 2
+  maintainFlockWeight: 5
+  lockYAxis: 0
+--- !u!4 &1773616891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773616889}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 47.2, y: 0, z: -3.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1824863930}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1778111876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34505,6 +34617,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 692d889cb58ff7741a72930ab5b0dcc4, type: 3}
+--- !u!1 &1824863929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1824863930}
+  m_Layer: 0
+  m_Name: flocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1824863930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824863929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2051781761}
+  - {fileID: 1773616891}
+  - {fileID: 1638331282}
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1827752784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 6ac902baa8be076429cdd7a40212622b, type: 3}
@@ -39024,6 +39169,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82beafc98cd634a29a3a098876e7b084, type: 3}
+--- !u!1 &2051781759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2051781761}
+  - component: {fileID: 2051781760}
+  m_Layer: 0
+  m_Name: Flock System [bats]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2051781760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051781759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe10baa4d821154bb224b8b35b6c8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 1625221395402176, guid: c9951ca0f61167b4593ffe21b0a089c8, type: 3}
+  flockAgents: []
+  initialAgentCount: 10
+  spawnradius: 3
+  neighborRadius: 1
+  avoidanceradius: 1.25
+  speed: 5
+  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
+  cohesionWeight: 1
+  avoidanceWeight: 5
+  alignmentWeight: 1
+  maintainFlockWeight: 5
+  lockYAxis: 0
+--- !u!4 &2051781761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051781759}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.2, y: 9.87, z: 4.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1824863930}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2057632368
 PrefabInstance:
   m_ObjectHideFlags: 0
