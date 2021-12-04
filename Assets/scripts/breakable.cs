@@ -20,6 +20,7 @@ public class breakable : MonoBehaviour
 
     public void OnBreak()
     {
+        Debug.Log("attack");
         if (hasGem == true)
         {
             Instantiate(Gem, transform.position, Quaternion.identity);
