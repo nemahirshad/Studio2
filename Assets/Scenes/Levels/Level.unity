@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -30613,7 +30613,7 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 3.5
-  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
+  leaderPrefab: {fileID: 1638331280}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 3
@@ -33475,7 +33475,7 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 5
-  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
+  leaderPrefab: {fileID: 1773616889}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 2
@@ -39185,7 +39185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2051781760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39202,10 +39202,10 @@ MonoBehaviour:
   flockAgents: []
   initialAgentCount: 10
   spawnradius: 3
-  neighborRadius: 1
-  avoidanceradius: 1.25
-  speed: 5
-  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
+  neighborRadius: 5.3
+  avoidanceradius: 3
+  speed: 12
+  leaderPrefab: {fileID: 2051781759}
   cohesionWeight: 1
   avoidanceWeight: 5
   alignmentWeight: 1
@@ -39219,7 +39219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051781759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 9.87, z: 4.9}
+  m_LocalPosition: {x: -4.41, y: 2.03, z: 4.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1824863930}

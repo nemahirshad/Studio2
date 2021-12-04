@@ -41,6 +41,7 @@ public class FlockAgent : MonoBehaviour
 
     public bool hasLeader;
 
+
     void Start()
     {
         framesPassed = 0;
@@ -51,7 +52,7 @@ public class FlockAgent : MonoBehaviour
         speed = flockcontroller.speed;
         flockRadius = flockcontroller.spawnradius;
 
-        velocity = Vector3.zero;
+        velocity = new Vector3(Random.Range(0, 5), 0,Random.Range(0,5));
     }
 
     public void Initialize(List<GameObject> entities, 
@@ -80,6 +81,7 @@ public class FlockAgent : MonoBehaviour
 
     Vector3 Alignment()
     {
+        // Play here
         Vector3 alignmentVelocity = Vector3.zero;
 
         if (flockAgents.Count <= 10)
@@ -153,9 +155,10 @@ public class FlockAgent : MonoBehaviour
 
     Vector3 Cohesion()
     {
+        // Play Here
         Vector3 avgAgentPos = Vector3.zero;
-        
-        
+
+
         if (flockAgents.Count > 10)
         {
             for (int i = 0; i < neighborAgents.Count; i++)
@@ -348,9 +351,11 @@ public class FlockAgent : MonoBehaviour
 
         Gizmos.color = Color.blue;
         //Gizmos.DrawWireSphere(transform.position, flockcontroller.neighborRadius);
+        Gizmos.DrawSphere(transform.position, 2);
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawRay(transform.position, alignment);
+        
 
         //Gizmos.color = Color.green;
         //Gizmos.DrawRay(transform.position, goalPos);

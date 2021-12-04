@@ -95,10 +95,11 @@ public class FlockManager : MonoBehaviour
 
         if (!needsLeader)
         {
-            Vector2 randomIntCircle = Random.insideUnitCircle;
+            
 
             for (int i = 0; i < initialAgentCount; i++)
             {
+                Vector2 randomIntCircle = Random.insideUnitCircle;
                 flockAgents.Add(Instantiate(agentPrefab,
                                 new Vector3(transform.position.x + randomIntCircle.x * spawnradius, 0, transform.position.z + randomIntCircle.y * spawnradius),
                                 Quaternion.identity,
