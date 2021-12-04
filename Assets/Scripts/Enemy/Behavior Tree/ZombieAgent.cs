@@ -42,7 +42,7 @@ public class ZombieAgent : BehaviorTree
 		wanderCountdown -= Time.deltaTime;
 
         astar.FindPath(transform.position, point.transform.position, gameObject);
-        rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
-        Debug.Log(grid.MovementCalculator(gameObject));
+        //rb.AddForce(grid.MovementCalculator(gameObject) * speed * Time.deltaTime, ForceMode.Impulse);
+        //Debug.Log(grid.MovementCalculator(gameObject));
     }
 }

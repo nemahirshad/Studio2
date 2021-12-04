@@ -12,6 +12,9 @@ namespace Brendan
         public float fDistanceBetweenNode;
         private float fNodeDiameter;
         private int gridSizeX, gridSizeY;
+        [SerializeField] Grid[] grids;
+        [SerializeField] Astar[] astarss;
+
 
         Node[,] nodeArray;
         //public List<Node> shortestPath;
@@ -19,26 +22,14 @@ namespace Brendan
 
         void Awake()
         {
+            grids = GameObject.FindObjectsOfType<Grid>();
+            astarss = GameObject.FindObjectsOfType<Astar>();
             fNodeDiameter = fNodeRadius * 2;
             gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);
             gridSizeY = Mathf.RoundToInt(gridSize.y / fNodeDiameter);
             CreateGrid();
 
 
-        }
-
-        public Vector3 MovementCalculator(GameObject AI)
-        {
-            if (AI.GetComponent<AIPathHolder>().shortestPath != null)
-            {
-                Vector3 dir = AI.GetComponent<AIPathHolder>().shortestPath[0].worldPosition - AI.transform.position + new Vector3(0, 0.5f, 0);
-                dir.Normalize();
-                return dir;
-            }
-            else
-            {
-                return Vector3.zero;
-            }
         }
 
         void CreateGrid()
@@ -144,13 +135,7 @@ namespace Brendan
                         Gizmos.color = Color.black;
                     }
 
-                    //if (shortestPath != null)
-                    //{
-                    //    if (shortestPath.Contains(n))
-                    //    {
-                    //        Gizmos.color = Color.green;
-                    //    }
-                    //}
+                  
                     Gizmos.DrawCube(n.worldPosition, Vector3.one * (fNodeDiameter - fDistanceBetweenNode));
                 }
             }

@@ -12,11 +12,10 @@ public class Breakable : MonoBehaviour
    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OnBreak();
-            Destroy(gameObject);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    OnBreak();
+        //}
     }
 
     public void OnBreak()
@@ -24,6 +23,7 @@ public class Breakable : MonoBehaviour
         if (hasGem == true)
         {
             Instantiate(Gem, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
         else
         {
