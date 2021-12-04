@@ -27,4 +27,16 @@ public class EnemyInfo : MonoBehaviour
     {
         health -= dmg;
     }
+
+    public void HealDamage()
+    {
+        if (health < maxHealth)
+        {
+            health++;
+        }
+        else
+        {
+            health = maxHealth;
+        }
+    }
 }
