@@ -350,7 +350,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01c83070a38940d42b1c523523aa6ba1, type: 2}
+  - {fileID: 2100000, guid: 3e1290c37f3c1784facfb7cbdf3ee519, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -394,6 +394,116 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1638331280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1638331282}
+  - component: {fileID: 1638331281}
+  m_Layer: 0
+  m_Name: Flock System [rats]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1638331281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638331280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe10baa4d821154bb224b8b35b6c8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 4706511063064792425, guid: 2aac032bd73950e44b7b2482aa4c7d8f, type: 3}
+  flockAgents: []
+  initialAgentCount: 15
+  spawnradius: 10
+  neighborRadius: 1
+  avoidanceradius: 0.75
+  speed: 3.5
+  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
+  cohesionWeight: 1
+  avoidanceWeight: 5.5
+  alignmentWeight: 3
+  maintainFlockWeight: 5
+--- !u!4 &1638331282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638331280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1773616889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773616891}
+  - component: {fileID: 1773616890}
+  m_Layer: 0
+  m_Name: Flock System [spider]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1773616890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773616889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe10baa4d821154bb224b8b35b6c8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 7051545284993558370, guid: 313250c3b192bb8498f1eb92e1066e42, type: 3}
+  flockAgents: []
+  initialAgentCount: 15
+  spawnradius: 10
+  neighborRadius: 1
+  avoidanceradius: 0.75
+  speed: 5
+  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
+  cohesionWeight: 1
+  avoidanceWeight: 5.5
+  alignmentWeight: 2
+  maintainFlockWeight: 5
+--- !u!4 &1773616891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773616889}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2051781759
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +515,7 @@ GameObject:
   - component: {fileID: 2051781761}
   - component: {fileID: 2051781760}
   m_Layer: 0
-  m_Name: Flock Dos
+  m_Name: Flock System [bats]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,15 +533,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe10baa4d821154bb224b8b35b6c8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentPrefab: {fileID: 4817876109603109300, guid: 76f3a53ad33b1db4b9cdb8ce072870e7, type: 3}
+  agentPrefab: {fileID: 1625221395402176, guid: c9951ca0f61167b4593ffe21b0a089c8, type: 3}
   flockAgents: []
-  initialAgentCount: 50
+  initialAgentCount: 10
   spawnradius: 10
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 5
   leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
-  cohesionWeight: 3
+  cohesionWeight: 1
   avoidanceWeight: 5
   alignmentWeight: 1
   maintainFlockWeight: 5

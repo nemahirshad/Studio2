@@ -7,11 +7,11 @@ namespace Brendan
 {
     public class Astar : MonoBehaviour
     {
-        Grid gridReference;
+        GridManager gridReference;
 
         private void Start()
         {
-            gridReference = GameObject.FindObjectOfType<Grid>();
+            gridReference = GameObject.FindObjectOfType<GridManager>();
         }
 
         // Update is called once per frame

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Brendan
 {
-    public class Grid : MonoBehaviour
+    public class GridManager : MonoBehaviour
     {
         public LayerMask WallLayer;
         public Vector2 gridSize;
@@ -12,7 +12,7 @@ namespace Brendan
         public float fDistanceBetweenNode;
         private float fNodeDiameter;
         private int gridSizeX, gridSizeY;
-        [SerializeField] Grid[] grids;
+        [SerializeField] GridManager[] grids;
         [SerializeField] Astar[] astarss;
 
 
@@ -22,7 +22,7 @@ namespace Brendan
 
         void Awake()
         {
-            grids = GameObject.FindObjectsOfType<Grid>();
+            grids = GameObject.FindObjectsOfType<GridManager>();
             astarss = GameObject.FindObjectsOfType<Astar>();
             fNodeDiameter = fNodeRadius * 2;
             gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);

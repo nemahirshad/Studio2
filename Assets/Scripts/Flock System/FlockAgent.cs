@@ -29,7 +29,6 @@ public class FlockAgent : MonoBehaviour
 
     float speed;
     int framesPassed;
-    bool flockAbandoned;
 
     public float cohesionWeight;
     public float avoidanceWeight;
@@ -311,6 +310,12 @@ public class FlockAgent : MonoBehaviour
                 velocity += (alignment + cohesion + avoidance + stayInFlock).normalized;
 
             velocity.Normalize();
+
+        /*var agentRotation = Quaternion.LookRotation(velocity - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, agentRotation, speed * 0.5f * Time.deltaTime);*/
+
+
+            transform.LookAt(velocity);
             transform.position += velocity * speed * Time.deltaTime;
         //}
     }
@@ -339,13 +344,13 @@ public class FlockAgent : MonoBehaviour
 
         Gizmos.color = Color.red;
         //Gizmos.DrawRay(transform.position, avoidance);
-        Gizmos.DrawWireSphere(transform.position, flockcontroller.avoidanceradius);
+        //Gizmos.DrawWireSphere(transform.position, flockcontroller.avoidanceradius);
 
         Gizmos.color = Color.blue;
         //Gizmos.DrawWireSphere(transform.position, flockcontroller.neighborRadius);
 
         Gizmos.color = Color.yellow;
-        //Gizmos.DrawRay(transform.position, alignment);
+        Gizmos.DrawRay(transform.position, alignment);
 
         //Gizmos.color = Color.green;
         //Gizmos.DrawRay(transform.position, goalPos);

@@ -18,7 +18,7 @@ public class FlockManager : MonoBehaviour
     //[SerializeField, Range(0f, 1f)]
     //float movementMultiplier = 0.5f;
 
-    float movementSpeed;
+    bool needsLeader = false;
 
     //----------Public Variables----------
 
@@ -43,27 +43,35 @@ public class FlockManager : MonoBehaviour
 
     float followWeight;
 
-    bool needsLeader = false;
+    public bool lockYAxis;
 
     void Start()
     {
         flockAgents = new List<GameObject>();
 
-        //movementSpeed = speed * movementMultiplier;
+        //SpawnFlock();
     }
 
-    void Update()
+    public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.P))
+        {
             SpawnFlock();
+            Debug.Log("Flock Spawned");
+        }
     }
-
     public void SpawnFlock()
     {
-        /*if (needsLeader)
+        /*if (lockYAxis)
         {
-            GameObject leader = Instantiate(leaderPrefab, new Vector3(transform.position.x, 0, transform.position.z + spawnradius), Quaternion.identity, transform);
-            leader.name = gameObject.name + " Leader";
+            if (needsLeader)
+            {
+                GameObject leader = Instantiate(leaderPrefab, new Vector3(transform.position.x, 0, transform.position.z + spawnradius), Quaternion.identity, transform);
+                leader.name = gameObject.name + " Leader";
+
+
+            }
+
 
             Vector2 randomIntCircle = Random.insideUnitCircle;
 
@@ -92,7 +100,7 @@ public class FlockManager : MonoBehaviour
             for (int i = 0; i < initialAgentCount; i++)
             {
                 flockAgents.Add(Instantiate(agentPrefab,
-                                new Vector3(Random.insideUnitSphere.x * spawnradius, 0, Random.insideUnitSphere.z * spawnradius),
+                                new Vector3(transform.position.x + randomIntCircle.x * spawnradius, 0, transform.position.z + randomIntCircle.y * spawnradius),
                                 Quaternion.identity,
                                 transform
                                 ));

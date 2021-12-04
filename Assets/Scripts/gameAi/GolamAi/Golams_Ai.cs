@@ -27,7 +27,7 @@ namespace Brendan
         public float attackRange;
         private State CurrentState; //Local variable that represents our state
         public Astar astar;
-        public Grid grid;
+        public GridManager grid;
         AIPathHolder aiPath;
         WaypointAI waypointAI;
 
