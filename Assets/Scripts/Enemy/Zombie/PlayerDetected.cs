@@ -10,15 +10,10 @@ public class PlayerDetected : MonoBehaviour
     {
         if (other.CompareTag("Player") && agent.currentState != ZombieAgent.ZombieState.ATTACKING)
         {
-            agent.Alarm();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            //agent.Disengage();
+            if (agent.CanBeAlarmed())
+            {
+                agent.Alarm();
+            }
         }
     }
 }

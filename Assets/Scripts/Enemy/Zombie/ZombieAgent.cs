@@ -17,7 +17,7 @@ public class ZombieAgent : MonoBehaviour
 
     [SerializeField] Animator anim;
 
-    [SerializeField] float attackRange, chaseRange, attackCooldown, speed, rotSpeed;
+    [SerializeField] float attackRange, chaseRange, attackCooldown, alarmCooldown, speed, rotSpeed;
     
     [SerializeField] int damage;
 
@@ -25,7 +25,7 @@ public class ZombieAgent : MonoBehaviour
 
     EnemyInfo info;
 
-    float attackTimer;
+    float attackTimer, alarmTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,7 @@ public class ZombieAgent : MonoBehaviour
         info = GetComponent<EnemyInfo>();
 
         attackTimer = attackCooldown;
+        alarmTimer = alarmCooldown;
 	}
 
     void Update()
@@ -42,7 +43,8 @@ public class ZombieAgent : MonoBehaviour
         {
             case ZombieState.IDLE:
                 anim.SetBool("Chasing", false);
-                info.HealDamage();
+
+                alarmTimer -= Time.deltaTime;
                 break;
 
             case ZombieState.CHASING:
@@ -94,6 +96,18 @@ public class ZombieAgent : MonoBehaviour
         {
             neighbors[i].currentState = ZombieState.CHASING;
         }
+
+        alarmTimer = alarmCooldown;
+    }
+
+    public bool CanBeAlarmed()
+    {
+        if (alarmTimer <= 0)
+        {
+            return true;
+        }
+
+        return false;
     }
 
      void Disengage()
