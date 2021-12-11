@@ -9,15 +9,6 @@ public class Breakable : MonoBehaviour
 
     GameObject obj;
 
-   
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    OnBreak();
-        //}
-    }
-
     public void OnBreak()
     {
         Debug.Log("attack");
@@ -51,7 +42,7 @@ public class Breakable : MonoBehaviour
                     //Drop Nothing
                     Destroy(gameObject);
                     break;
+            }
         }
-      }
     }
 }
