@@ -12969,6 +12969,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4710611665491024631, guid: 7e63c5bb107c00042b2c35eb3539bc57, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 612309345}
     - target: {fileID: 4710611665491024638, guid: 7e63c5bb107c00042b2c35eb3539bc57, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -13036,9 +13040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e082ee676f8720479e4a82e8756d9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  gems: 0
-  highscore: 0
 --- !u!1001 &614606692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42890,7 +42891,7 @@ GameObject:
   - component: {fileID: 2084441674}
   m_Layer: 0
   m_Name: Zombies
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

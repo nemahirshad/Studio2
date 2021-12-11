@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - FlockEntities
   - Golem
+  - Enemy
   layers:
   - Default
   - TransparentFX

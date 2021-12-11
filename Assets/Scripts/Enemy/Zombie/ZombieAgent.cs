@@ -43,7 +43,6 @@ public class ZombieAgent : MonoBehaviour
         {
             case ZombieState.IDLE:
                 anim.SetBool("Chasing", false);
-                info.HealDamage();
 
                 alarmTimer -= Time.deltaTime;
                 break;
