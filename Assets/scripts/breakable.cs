@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Breakable : MonoBehaviour
+public class breakable : MonoBehaviour
 {
     public bool hasGem;
-    [SerializeField] GameObject Gem, health, fuel;
+    [SerializeField] GameObject Gem, health, fuel, coin;
 
     GameObject obj;
+  
 
    
     void Update()
@@ -20,6 +21,10 @@ public class Breakable : MonoBehaviour
 
     public void OnBreak()
     {
+        if(coin != null)
+        {
+            Instantiate(coin, transform.position, Quaternion.identity);
+        }
         Debug.Log("attack");
         if (hasGem == true)
         {
