@@ -25,7 +25,6 @@ public class Inventory : MonoBehaviour
     public Text finalHighScore;
 
     public List<Item> healthPickup;
-    public List<Item> torchfuelPickup;
     public List<Item> shipfuelPickup;
 
     public int scoreCount;
@@ -33,7 +32,6 @@ public class Inventory : MonoBehaviour
 
     //These bools can be set to false when the player inventory does not contain any item corresponding to their respective bools.
     bool canUseHealth = false;
-    bool canUseTorchFluid = false;
     bool canUseShipFuel = false;
     //-------------------------Farhan's Code-------------------------
 
@@ -45,11 +43,10 @@ public class Inventory : MonoBehaviour
         //Im having some trouble figuring out how to simply use the maxStackSize value from the Item Script
         //So Im gonna leave it empty for now. Will need to work with Dylan to solve this later.
         healthPickup = new List<Item>();
-        torchfuelPickup = new List<Item>();
         shipfuelPickup = new List<Item>();
 
         scoreCount = 0;
-        highScore = 6;
+        highScore = 0;
         UpdateScore();
         //-------------------------Farhan's Code-------------------------
 
@@ -94,20 +91,6 @@ public class Inventory : MonoBehaviour
 
                 if (healthPickup.Count == 0)
                     canUseHealth = false;
-            }
-        }
-
-        if (canUseTorchFluid)
-        {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                //Insert torch fluid function here. It's supposed to function like a reload mechanic,
-                //where you essentially re-light the torch so that you can use it again.
-
-                torchfuelPickup.RemoveAt(torchfuelPickup.Count-1);
-
-                if (torchfuelPickup.Count == 0)
-                    canUseTorchFluid = false;
             }
         }
 
@@ -198,20 +181,6 @@ public class Inventory : MonoBehaviour
         {
             for (int i = 0; i < pickup.amountInStack; i++)
             {
-                torchfuelPickup.Add(pickup);
-
-                if (torchfuelPickup.Count >= 1)
-                    canUseTorchFluid = true;
-
-                else if (torchfuelPickup.Count == 0)
-                    canUseTorchFluid = false;
-            }
-        }
-
-        if (pickup.itemID == 3)
-        {
-            for (int i = 0; i < pickup.amountInStack; i++)
-            {
                 shipfuelPickup.Add(pickup);
 
                 if (shipfuelPickup.Count >= 1)
@@ -230,7 +199,6 @@ public class Inventory : MonoBehaviour
         if (highScore < scoreCount)
         {
             highScore = scoreCount;
-            //playerInfo.AddScore(highScore);
             highscoreText.text = "Highscore: " + highScore;
         }
     }
@@ -238,7 +206,6 @@ public class Inventory : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("You Won");
-        //gameObject.SetActive(false);
         winScreen.SetActive(true);
         finalHighScore.text = "Highscore: " + highScore;
         inventoryObject.SetActive(true);

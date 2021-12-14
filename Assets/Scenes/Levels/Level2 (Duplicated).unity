@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2129,9 +2129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &72737205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3035,9 +3035,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &140194284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3550,9 +3550,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &152798986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4627,7 +4627,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -7298,7 +7297,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -8448,9 +8446,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &349498323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9124,9 +9122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &367497881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11291,9 +11289,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &442750315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19838,9 +19836,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &742875621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22872,7 +22870,6 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 5
-  leaderPrefab: {fileID: 839130414}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 2
@@ -23319,9 +23316,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &851407010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24453,9 +24450,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &895116705
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25816,9 +25813,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &937033225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27593,7 +27590,6 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 3.5
-  leaderPrefab: {fileID: 1003716527}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 3
@@ -28411,9 +28407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1034193186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28575,7 +28571,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -30220,7 +30215,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -31728,9 +31722,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1163967141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32376,9 +32370,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1185036900
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33171,9 +33165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1208960224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40238,9 +40232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1454060069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40577,9 +40571,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1468460487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42264,9 +42258,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1527785603
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44193,9 +44187,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1597077675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44473,9 +44467,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1607109778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45578,7 +45572,6 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 3.5
-  leaderPrefab: {fileID: 1638331280}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 3
@@ -46588,9 +46581,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1714391809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47013,9 +47006,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1735852313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48243,7 +48236,6 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 5
-  leaderPrefab: {fileID: 1773616889}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 2
@@ -49794,9 +49786,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1822811298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50413,9 +50405,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1847317223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51939,9 +51931,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1905522658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53487,9 +53479,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &1953109311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55566,7 +55558,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -56329,7 +56320,6 @@ MonoBehaviour:
   neighborRadius: 5.3
   avoidanceradius: 3
   speed: 12
-  leaderPrefab: {fileID: 2051781759}
   cohesionWeight: 1
   avoidanceWeight: 5
   alignmentWeight: 1
@@ -58202,9 +58192,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!65 &2135183296
 BoxCollider:
   m_ObjectHideFlags: 0

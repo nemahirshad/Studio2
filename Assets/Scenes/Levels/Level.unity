@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3752,7 +3752,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3921,9 +3920,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 1
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!136 &197006959
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5404,9 +5403,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 1
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!136 &251305290
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10703,9 +10702,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 1
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!136 &481182237
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10821,9 +10820,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 1
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!136 &487146998
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17742,9 +17741,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 1
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!136 &855212963
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21889,9 +21888,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 1
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!136 &1068680975
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24548,9 +24547,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 1
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!136 &1229235700
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24613,7 +24612,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -24859,9 +24857,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 1
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!136 &1259290413
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30425,9 +30423,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGem: 1
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
   fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!136 &1564981612
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -32641,7 +32639,6 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 3.5
-  leaderPrefab: {fileID: 1638331280}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 3
@@ -35534,7 +35531,6 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 5
-  leaderPrefab: {fileID: 1773616889}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 2
@@ -41071,7 +41067,6 @@ MonoBehaviour:
   neighborRadius: 5.3
   avoidanceradius: 3
   speed: 12
-  leaderPrefab: {fileID: 2051781759}
   cohesionWeight: 1
   avoidanceWeight: 5
   alignmentWeight: 1
@@ -43185,7 +43180,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
