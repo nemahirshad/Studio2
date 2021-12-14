@@ -13,13 +13,6 @@ public class FlockManager : MonoBehaviour
     [SerializeField, Range(4, 50)]
     int initialAgentCount = 10;
 
-    
-
-    //[SerializeField, Range(0f, 1f)]
-    //float movementMultiplier = 0.5f;
-
-    bool needsLeader = false;
-
     //----------Public Variables----------
 
     [Range(1f, 10f)]
@@ -34,14 +27,10 @@ public class FlockManager : MonoBehaviour
     [Range(1f, 100f)]
     public float speed = 5;
 
-    public GameObject leaderPrefab;
-    
     public float cohesionWeight;
     public float avoidanceWeight;
     public float alignmentWeight;
     public float maintainFlockWeight;
-
-    float followWeight;
 
     public bool lockYAxis;
 
@@ -62,57 +51,18 @@ public class FlockManager : MonoBehaviour
     }
     public void SpawnFlock()
     {
-        /*if (lockYAxis)
+        for (int i = 0; i < initialAgentCount; i++)
         {
-            if (needsLeader)
-            {
-                GameObject leader = Instantiate(leaderPrefab, new Vector3(transform.position.x, 0, transform.position.z + spawnradius), Quaternion.identity, transform);
-                leader.name = gameObject.name + " Leader";
-
-
-            }
-
-
             Vector2 randomIntCircle = Random.insideUnitCircle;
+            flockAgents.Add(Instantiate(agentPrefab,
+                            new Vector3(transform.position.x + randomIntCircle.x * spawnradius, gameObject.transform.position.y, transform.position.z + randomIntCircle.y * spawnradius),
+                            Quaternion.identity,
+                            transform
+                            ));
 
-            for (int i = 0; i < initialAgentCount; i++)
-            {
-                flockAgents.Add(Instantiate(agentPrefab,
-                                //new Vector3(randomIntCircle.x * spawnradius, 0, randomIntCircle.y * spawnradius),
-                                new Vector3(Random.insideUnitSphere.x * spawnradius, 0, Random.insideUnitSphere.z * spawnradius),
-                                Quaternion.identity,
-                                transform
-                                ));
-
-                flockAgents[i].name = agentPrefab.name + " " + i;
-                flockAgents[i].GetComponent<FlockAgent>().Initialize(flockAgents, this, /*transform.position,
-                                                                     leaderPrefab, speed, spawnradius,
-                                                                     cohesionWeight, avoidanceWeight,
-                                                                     alignmentWeight, followWeight,
-                                                                     maintainFlockWeight, true);
-            }
-        }*/
-
-        if (!needsLeader)
-        {
-            
-
-            for (int i = 0; i < initialAgentCount; i++)
-            {
-                Vector2 randomIntCircle = Random.insideUnitCircle;
-                flockAgents.Add(Instantiate(agentPrefab,
-                                new Vector3(transform.position.x + randomIntCircle.x * spawnradius, 0, transform.position.z + randomIntCircle.y * spawnradius),
-                                Quaternion.identity,
-                                transform
-                                ));
-
-                flockAgents[i].name = agentPrefab.name + " " + i;
-                flockAgents[i].GetComponent<FlockAgent>().Initialize(flockAgents, this, /*transform.position,
-                                                                     leaderPrefab, speed, spawnradius,*/
-                                                                     cohesionWeight, avoidanceWeight,
-                                                                     alignmentWeight, followWeight,
-                                                                     maintainFlockWeight, false);
-            }
+            flockAgents[i].name = agentPrefab.name + " " + i;
+            flockAgents[i].GetComponent<FlockAgent>().Initialize(flockAgents, this, cohesionWeight,
+                                                                avoidanceWeight, alignmentWeight, maintainFlockWeight, lockYAxis);
         }
     }
 
