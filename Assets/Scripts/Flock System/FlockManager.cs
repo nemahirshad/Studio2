@@ -38,16 +38,16 @@ public class FlockManager : MonoBehaviour
     {
         flockAgents = new List<GameObject>();
 
-        //SpawnFlock();
+        SpawnFlock();
     }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
             SpawnFlock();
             Debug.Log("Flock Spawned");
-        }
+        }*/
     }
     public void SpawnFlock()
     {

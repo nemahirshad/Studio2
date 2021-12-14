@@ -32643,7 +32643,7 @@ MonoBehaviour:
   avoidanceWeight: 5.5
   alignmentWeight: 3
   maintainFlockWeight: 5
-  lockYAxis: 0
+  lockYAxis: 1
 --- !u!4 &1638331282
 Transform:
   m_ObjectHideFlags: 0
@@ -35535,7 +35535,7 @@ MonoBehaviour:
   avoidanceWeight: 5.5
   alignmentWeight: 2
   maintainFlockWeight: 5
-  lockYAxis: 0
+  lockYAxis: 1
 --- !u!4 &1773616891
 Transform:
   m_ObjectHideFlags: 0
