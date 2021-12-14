@@ -33,7 +33,6 @@ public class ZombieAgent : MonoBehaviour
         player = FindObjectOfType<HealthSystem>().transform;
         info = GetComponent<EnemyInfo>();
 
-        attackTimer = attackCooldown;
         alarmTimer = alarmCooldown;
 	}
 
@@ -44,11 +43,18 @@ public class ZombieAgent : MonoBehaviour
             case ZombieState.IDLE:
                 anim.SetBool("Chasing", false);
 
+                if (Vector3.Distance(player.position, transform.position) < chaseRange)
+                {
+                    if (CanBeAlarmed())
+                    {
+                        Alarm();
+                    }
+                }
+
                 alarmTimer -= Time.deltaTime;
                 break;
 
             case ZombieState.CHASING:
-                anim.SetBool("Chasing", true);
                 transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
 
                 Vector3 targetDirection = player.position - transform.position;
@@ -57,7 +63,6 @@ public class ZombieAgent : MonoBehaviour
                 
                 Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
                 
-                Debug.DrawRay(transform.position, newDirection, Color.red);
                 transform.rotation = Quaternion.LookRotation(newDirection);
 
                 if (Vector3.Distance(player.position, transform.position) > chaseRange)
@@ -65,15 +70,15 @@ public class ZombieAgent : MonoBehaviour
                     Disengage();
                 }
                 
-                if (Vector3.Distance(player.position, transform.position) < chaseRange)
+                if (Vector3.Distance(player.position, transform.position) < attackRange)
                 {
                     currentState = ZombieState.ATTACKING;
                 }
+
+                anim.SetBool("Chasing", true);
                 break;
 
             case ZombieState.ATTACKING:
-                anim.SetBool("Chasing", false);
-
                 if (Vector3.Distance(player.position, transform.position) > attackRange)
                 {
                     currentState = ZombieState.CHASING;
@@ -82,10 +87,12 @@ public class ZombieAgent : MonoBehaviour
                 attackTimer -= Time.deltaTime;
                 if (attackTimer <= 0)
                 {
-                    player.GetComponent<HealthSystem>().LoseHP(damage);
                     anim.SetTrigger("Attack");
+                    player.GetComponent<HealthSystem>().LoseHP(damage);
                     attackTimer = attackCooldown;
                 }
+
+                anim.SetBool("Chasing", false);
                 break;
         }
     }

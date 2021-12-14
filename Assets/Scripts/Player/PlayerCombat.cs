@@ -4,30 +4,17 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public Inventory inventory;
+
     public int damage;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Breakable"))
         {
-            other.gameObject.GetComponent<breakable>().OnBreak();
+            other.gameObject.GetComponent<Breakable>().OnBreak();
+            inventory.scoreCount++;
+            inventory.UpdateScore();
         }
 
         if (other.gameObject.CompareTag("Enemy"))
