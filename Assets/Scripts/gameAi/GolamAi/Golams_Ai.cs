@@ -30,6 +30,7 @@ namespace Brendan
         public GridManager grid;
         AIPathHolder aiPath;
         WaypointAI waypointAI;
+        Transform golemChild;
 
         public void ChangeState(State newState)
         {
@@ -41,6 +42,7 @@ namespace Brendan
             aiPath = GetComponent<AIPathHolder>();
             waypointAI = GetComponent<WaypointAI>();
             CurrentState = State.Patrol;
+            golemChild = transform.GetChild(0);
             
         }
 
@@ -101,7 +103,9 @@ namespace Brendan
                 if (waypointAI.TargetReached)
                 {
                     target = null;
-                }  
+                }
+                Rotate(target.transform);
+
             }
 
             if (target == null)
@@ -124,6 +128,7 @@ namespace Brendan
             
             astar.FindPath(transform.position, player.transform.position, gameObject);
             waypointAI.MoveTowards(aiPath.shortestPath, rb, speed, 2.2f);
+            Rotate(player.transform);
             //Debug.Log(grid.MovementCalculator(gameObject));
             //  anim.SetBool("IsWalking", true);
         }
@@ -134,19 +139,14 @@ namespace Brendan
             //  anim.SetBool("IsAttacking", true);
         }
 
-        private void OnDeath()
+        private void Rotate(Transform tran)
         {
-            Destroy(gameObject);
+            if (target)
+            {
+                golemChild.LookAt(tran);
+            }
         }
 
-        public void OnDeathEffects()
-        {
-            // Play Particles
-            // Play Sound
-            // Add Score
-            // Switch Animation
-            Destroy(gameObject);
-        }
 
         //private void OnDrawGizmos()
         //{
