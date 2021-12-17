@@ -8,6 +8,8 @@ namespace Brendan
     {
         List<Node> waypoints;
         Rigidbody currentRigidbody;
+        Quaternion rotationGoal;
+        public float TurnSpeed;
 
         float speed;
         float minimumDistanceToTarget;
@@ -40,6 +42,7 @@ namespace Brendan
                     // probably here or occuring from the minimumdistancetotarget from the function below
                     Vector3 direction = (waypoints[index].worldPosition - currentRigidbody.position).normalized;
                     currentRigidbody.AddForce(direction * speed * Time.deltaTime, ForceMode.Impulse);
+                    Rotate(direction);
                 }
             }
         }
@@ -53,6 +56,15 @@ namespace Brendan
             this.currentRigidbody = currentRigidbody;
             this.speed = speed;
             this.minimumDistanceToTarget = minimumDistanceToTarget;
+        }
+
+        private void Rotate(Vector3 dir)
+        {
+           
+           // TargetDir = new Vector3(0, TargetDir.y, 0);
+            //Vector3 newDirection = Vector3.RotateTowards(transform.forward, dir, 0.5f * Time.deltaTime, 0.0f);
+            rotationGoal = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotationGoal, TurnSpeed);
         }
     }
 }
