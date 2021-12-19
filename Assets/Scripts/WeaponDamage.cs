@@ -19,7 +19,7 @@ namespace Brendan
                 Debug.Log(hit.collider.tag);
                 if (hit.collider.tag == "Breakable")
                 {
-                    hit.collider.GetComponent<breakable>().OnBreak();
+                    hit.collider.GetComponent<Breakable>().OnBreak();
                     Debug.Log("Vase Break");
 
                 }
