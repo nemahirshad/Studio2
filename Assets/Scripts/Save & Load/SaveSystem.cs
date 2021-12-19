@@ -16,7 +16,7 @@ public static class SaveSystem
 
     public static PlayerData LoadPlayer()
     {
-        string path = Application.persistentDataPath + "/player. fun";
+        string path = Application.persistentDataPath + "/player.fun";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -31,6 +31,19 @@ public static class SaveSystem
             Debug.LogError("No file exists");
             return null;
         }
+    }
+
+    public static bool FileFound()
+    {
+        string path = Application.persistentDataPath + "/player.fun";
+
+        if (File.Exists(path))
+        {
+            return true;
+        }
+
+        Debug.LogError("No file exists");
+        return false;
     }
 }
 

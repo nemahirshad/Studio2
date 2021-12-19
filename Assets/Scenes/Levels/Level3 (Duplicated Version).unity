@@ -8192,6 +8192,7 @@ MonoBehaviour:
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
   health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
   fuel: {fileID: 3330024454172397328, guid: 8ae01e61979d3bc46820f00d317ba734, type: 3}
+  coin: {fileID: 0}
 --- !u!65 &355958602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12341,6 +12342,7 @@ MonoBehaviour:
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
   health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
   fuel: {fileID: 3330024454172397328, guid: 8ae01e61979d3bc46820f00d317ba734, type: 3}
+  coin: {fileID: 0}
 --- !u!65 &558316317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12799,6 +12801,7 @@ MonoBehaviour:
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
   health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
   fuel: {fileID: 3330024454172397328, guid: 8ae01e61979d3bc46820f00d317ba734, type: 3}
+  coin: {fileID: 0}
 --- !u!65 &571566799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19904,6 +19907,7 @@ MonoBehaviour:
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
   health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
   fuel: {fileID: 3330024454172397328, guid: 8ae01e61979d3bc46820f00d317ba734, type: 3}
+  coin: {fileID: 0}
 --- !u!65 &937033225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21460,6 +21464,7 @@ MonoBehaviour:
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
   health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
   fuel: {fileID: 3330024454172397328, guid: 8ae01e61979d3bc46820f00d317ba734, type: 3}
+  coin: {fileID: 0}
 --- !u!65 &1061003023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22299,6 +22304,7 @@ MonoBehaviour:
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
   health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
   fuel: {fileID: 3330024454172397328, guid: 8ae01e61979d3bc46820f00d317ba734, type: 3}
+  coin: {fileID: 0}
 --- !u!65 &1105566790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23154,6 +23160,7 @@ MonoBehaviour:
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
   health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
   fuel: {fileID: 3330024454172397328, guid: 8ae01e61979d3bc46820f00d317ba734, type: 3}
+  coin: {fileID: 0}
 --- !u!65 &1142273272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36707,6 +36714,7 @@ MonoBehaviour:
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
   health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
   fuel: {fileID: 3330024454172397328, guid: 8ae01e61979d3bc46820f00d317ba734, type: 3}
+  coin: {fileID: 0}
 --- !u!65 &1817678896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40780,6 +40788,7 @@ MonoBehaviour:
   Gem: {fileID: 7127176174525984304, guid: cece619014f06e94aac23b2d5e0ccb9d, type: 3}
   health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
   fuel: {fileID: 3330024454172397328, guid: 8ae01e61979d3bc46820f00d317ba734, type: 3}
+  coin: {fileID: 0}
 --- !u!65 &2129865877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41335,10 +41344,18 @@ PrefabInstance:
     - target: {fileID: 8360214274754193480, guid: b2852327b3bef254ca044f967a8be06b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 913318479}
+    - target: {fileID: 8360214274754193480, guid: b2852327b3bef254ca044f967a8be06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RespawnButton
       objectReference: {fileID: 0}
     - target: {fileID: 8360214275231849466, guid: b2852327b3bef254ca044f967a8be06b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 913318479}
+    - target: {fileID: 8360214275231849466, guid: b2852327b3bef254ca044f967a8be06b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenuButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2852327b3bef254ca044f967a8be06b, type: 3}
