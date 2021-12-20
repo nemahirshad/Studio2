@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerJumpScript : MonoBehaviour
 {
-    [SerializeField] TPController TPController;
+    [SerializeField] PlayerMovement TPController;
 
     bool jump;
 
