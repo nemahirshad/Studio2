@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
 {
     public GemScriptableObject gems;
 
+    public GameObject player;
+    public GameObject GameOverCam;
     public GameObject inventoryObject;
     public GameObject followMouseImage;
 
@@ -205,6 +207,13 @@ public class Inventory : MonoBehaviour
 
     public void EndGame()
     {
+        player.SetActive(false);
+        GameOverCam.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+
+
+
+
         Debug.Log("You Won");
         winScreen.SetActive(true);
         finalHighScore.text = "Highscore: " + highScore;

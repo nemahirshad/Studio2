@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1423058665369252934, guid: 7e63c5bb107c00042b2c35eb3539bc57, type: 3}
         m_TargetAssemblyTypeName: RewardSystem, Assembly-CSharp
         m_MethodName: ClaimReward
         m_Mode: 1
@@ -250,8 +250,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -43}
-  m_SizeDelta: {x: 116.9342, y: 120.7104}
+  m_AnchoredPosition: {x: -0.00059509, y: 45.038}
+  m_SizeDelta: {x: 189.93, y: 197.3414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3806559624074807403
 CanvasRenderer:
@@ -325,8 +325,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.1724, y: 4.4162}
-  m_SizeDelta: {x: 93.844, y: 91.0317}
+  m_AnchoredPosition: {x: 4.5059, y: 5.5935}
+  m_SizeDelta: {x: 155.1835, y: 174.7209}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3540925584033424915
 CanvasRenderer:
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 7643698884651000764}
   - component: {fileID: 7643698884651000765}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Return to Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,9 +726,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5389893363470397931, guid: 7e63c5bb107c00042b2c35eb3539bc57, type: 3}
         m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
-        m_MethodName: RespawnButton
+        m_MethodName: ReturnToShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 7643698884662157449}
   - component: {fileID: 7643698884662157446}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: 'Next Level '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,7 +1030,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Main Menu
+  m_Text: 'Next Level
 
 '
 --- !u!1 &8812525685663467279
@@ -1067,7 +1067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37.699574, y: -39.49007}
+  m_AnchoredPosition: {x: 62.489, y: -70}
   m_SizeDelta: {x: 24.7893, y: 23.5319}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7446147935976270210
