@@ -7,10 +7,13 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject rewardSystem;
     public GameObject[] popUps;
+    public GameObject firstPopUp;
     private int i;
     private int countForInput;
     public GameObject jumpObj;
 
+    public bool firstRun;
+    public bool interacted;
 
     void Start()
     {
@@ -20,93 +23,110 @@ public class TutorialManager : MonoBehaviour
 
     public void Update()
     {
-        for (int i = 0; i < popUps.Length; i++)
+        if (firstRun)
         {
-            if (this.i == i)
+            firstPopUp.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                popUps[i].SetActive(true);
-            }
-            else
-            {
-                popUps[i].SetActive(false);
+                firstRun = false;
+                firstPopUp.SetActive(false);
             }
         }
-
-        if (i == 0)
+        else
         {
-            if (Input.GetKeyDown(KeyCode.Return)) // INTRO TO SKIP
+            if (interacted)
             {
-                i++;
-            }
-        }
-        else if (i == 1) //MOVING AND LOOKING
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                countForInput++;  //1
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                countForInput++;    //2
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                countForInput++; //3
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                countForInput++;   //4
-            }
-            if (countForInput >= 4)
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
+                for (int i = 0; i < popUps.Length; i++)
                 {
-                    Debug.Log("worgehdks");
-                    i++;
-                    jumpObj.SetActive(true);
+                    if (this.i == i)
+                    {
+                        popUps[i].SetActive(true);
+                    }
+                    else
+                    {
+                        popUps[i].SetActive(false);
+                    }
                 }
-            }
-        }
-        else if (i == 2) //JUMP
-        {
-            if (Input.GetKeyDown(KeyCode.Return ))
-            {
-                jumpObj.SetActive(false);
-                i++;
-            }
-        }
-        else if (i == 3) //RKey
-        {
-              if (Input.GetKeyDown(KeyCode.Return))
-              {
-                   i++;
-              }
-        }
-        else if (i == 4) //coMBAT
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }
-        } else if (i == 5) //Inventory
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }
-        }else if (i == 6) //End
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }
-        }
-        else if (i == 7) //End
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-                rewardSystem.SetActive(true);
+
+                if (i == 0)
+                {
+                    if (Input.GetKeyDown(KeyCode.Return)) // INTRO TO SKIP
+                    {
+                        i++;
+                    }
+                }
+                else if (i == 1) //MOVING AND LOOKING
+                {
+                    if (Input.GetKeyDown(KeyCode.W))
+                    {
+                        countForInput++;  //1
+                    }
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        countForInput++;    //2
+                    }
+                    if (Input.GetKeyDown(KeyCode.S))
+                    {
+                        countForInput++; //3
+                    }
+                    if (Input.GetKeyDown(KeyCode.D))
+                    {
+                        countForInput++;   //4
+                    }
+                    if (countForInput >= 4)
+                    {
+                        if (Input.GetKeyDown(KeyCode.Return))
+                        {
+                            Debug.Log("worgehdks");
+                            i++;
+                            jumpObj.SetActive(true);
+                        }
+                    }
+                }
+                else if (i == 2) //JUMP
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        jumpObj.SetActive(false);
+                        i++;
+                    }
+                }
+                else if (i == 3) //RKey
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        i++;
+                    }
+                }
+                else if (i == 4) //coMBAT
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        i++;
+                    }
+                }
+                else if (i == 5) //Inventory
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        i++;
+                    }
+                }
+                else if (i == 6) //End
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        i++;
+                    }
+                }
+                else if (i == 7) //End
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        i++;
+                        rewardSystem.SetActive(true);
+                    }
+                }
             }
         }
     }
