@@ -5,23 +5,10 @@ using UnityEngine.UI;
 
 public class RobotInteractable : Interactable
 {
-    public GameObject CombatPopup;
-  
-    void Start()
-    {
-        
-    }
-
-  
-    void Update()
-    {
-        
-    }
+    public TutorialManager tutManager;
 
     public override void Interact()
     {
-        //Play tutorial
-
-
+        tutManager.interacted = true;
     }
 }

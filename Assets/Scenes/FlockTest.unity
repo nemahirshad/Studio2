@@ -430,11 +430,11 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 3.5
-  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 3
   maintainFlockWeight: 5
+  lockYAxis: 1
 --- !u!4 &1638331282
 Transform:
   m_ObjectHideFlags: 0
@@ -485,11 +485,11 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 5
-  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
   cohesionWeight: 1
   avoidanceWeight: 5.5
   alignmentWeight: 2
   maintainFlockWeight: 5
+  lockYAxis: 1
 --- !u!4 &1773616891
 Transform:
   m_ObjectHideFlags: 0
@@ -540,11 +540,11 @@ MonoBehaviour:
   neighborRadius: 1
   avoidanceradius: 0.75
   speed: 5
-  leaderPrefab: {fileID: 3732202602354061216, guid: 04fc262cd8ca6724fbd2c91c09b040d5, type: 3}
   cohesionWeight: 1
   avoidanceWeight: 5
   alignmentWeight: 1
   maintainFlockWeight: 5
+  lockYAxis: 0
 --- !u!4 &2051781761
 Transform:
   m_ObjectHideFlags: 0

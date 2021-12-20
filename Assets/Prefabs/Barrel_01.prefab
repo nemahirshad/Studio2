@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734095813172179451}
   - component: {fileID: 2277140847254558236}
-  - component: {fileID: 4648467355259992250}
+  - component: {fileID: 7145761228254253844}
   m_Layer: 0
   m_Name: Barrel_01
   m_TagString: Breakable
@@ -47,7 +47,7 @@ CapsuleCollider:
   m_Height: 1.5005269
   m_Direction: 1
   m_Center: {x: -2.298162, y: 0.6718681, z: -1.3368858}
---- !u!114 &4648467355259992250
+--- !u!114 &7145761228254253844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,14 +56,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1394829837263104833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a980dbeab8bd034f9065fe585e2cb64, type: 3}
+  m_Script: {fileID: 11500000, guid: acea853b4f80f544db1a1fb0e3280a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hasGem: 0
   Gem: {fileID: 1821893806372678414, guid: fd1c5be3fdc64984fa56ab16f04be9e4, type: 3}
-  health: {fileID: 4877934728282811590, guid: 8b12d2e659d31164d929520b94a1b12d, type: 3}
-  fuel: {fileID: 1821893806372678414, guid: fd1c5be3fdc64984fa56ab16f04be9e4, type: 3}
-  coin: {fileID: 4245969941886924221, guid: dc584f4e448e2d344bfc58f6f1c30764, type: 3}
+  health: {fileID: 468370567176367515, guid: 28422c5e4b21db34a85283d1906c73d4, type: 3}
+  fuel: {fileID: 5203792463204303205, guid: 7cf48ea4c2a54464bbe558eca1a44d71, type: 3}
+  coin: {fileID: 8009194050565142566, guid: f09ae15160f01ab47995d2b00e2a1b35, type: 3}
 --- !u!1 &7023250042771180769
 GameObject:
   m_ObjectHideFlags: 0

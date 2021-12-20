@@ -37,17 +37,6 @@ public class HealthSystem : MonoBehaviour
         //Checking if the player health exceeds the maximum amount of health they can have.
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
-        
-
-
-/*---------------Testing HP System-----------------
-        if (Input.GetKeyDown(KeyCode.Space))
-            LoseHP(damage);
-
-        if (Input.GetKeyDown(KeyCode.H))
-            GainHP(gainHP);
----------------Testing HP System-----------------*/
-
 
         for (int i = 0; i < hearts.Length; i++)
         {
@@ -66,53 +55,6 @@ public class HealthSystem : MonoBehaviour
 
     public void LoseHP(int damage)
     {
-        /*
-        //--------------------This part of the code isn't working for some reason--------------------
-
-                //Checks if the damage dealt is less than the max health and the player's current health, and then subtracts it from the current health.
-                if(damage < maxHealth && damage < currentHealth)
-                {
-                    currentHealth -= damage;
-                }
-
-                /*For some reason everytime I try to test this piece of code, the player always ends up with zero hp.
-                 Not sure why though. 
-                Without this if-statement, the player won't lose any hp if the damage recieved is less than the max health AND less than the health the player has.
-
-        //--------------------This part of the code isn't working for some reason--------------------
-
-
-                //Checks to see if the damage dealt is more than the hp the player has left but still less than the max hp
-                if (damage < maxHealth && damage >= currentHealth)
-                {
-                    currentHealth = 0;
-                    PlayerDeath();
-                }
-
-                //Checks to see if the damage dealt is greater than the max health. If it is, it lets the player have one heart, to ensure they have a chance at survival.
-                if (damage >= maxHealth)
-                {
-                    currentHealth -= maxHealth - 1;
-
-                    if (currentHealth < 0)
-                    {
-                        currentHealth = 0;
-                        PlayerDeath();
-                    }
-                }*/
-
-        //Checks to see if the damage dealt is greater than the max health. If it is, it lets the player have one heart, to ensure they have a chance at survival.
-        /*if (damage >= maxHealth)
-        {
-            currentHealth -= maxHealth - 1;
-
-            if (currentHealth < 0)
-            {
-                currentHealth = 0;
-                PlayerDeath();
-            }
-        }*/
-
         //Checks if the damage dealt is less than max health. If true, the player loses hp that is equal to the amount of damage recieved.
         if (damage < maxHealth)
         {

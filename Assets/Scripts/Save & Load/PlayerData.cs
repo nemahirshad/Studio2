@@ -11,8 +11,10 @@ public class PlayerData : MonoBehaviour
 
     void Start()
     {
-        health = SaveSystem.LoadPlayer().health;
-        highscore = SaveSystem.LoadPlayer().highscore;
+        PlayerData playerData = SaveSystem.LoadPlayer();
+        
+        health = playerData.health;
+        highscore = playerData.highscore;
     }
 
     public PlayerData(HealthSystem player, Inventory inventory)

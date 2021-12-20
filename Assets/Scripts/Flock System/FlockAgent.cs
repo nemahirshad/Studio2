@@ -9,9 +9,7 @@ public class FlockAgent : MonoBehaviour
     List<GameObject> flockAgents;
     public List<GameObject> neighborAgents;
 
-    GameObject flockLeader;
-
-    Vector3 flockCenter;
+    Transform flockParent;
     float flockRadius;
 
     Vector3 velocity;
@@ -39,7 +37,7 @@ public class FlockAgent : MonoBehaviour
 
     public float agentSmoothTime = 0.5f;
 
-    public bool hasLeader;
+    public bool lockYAxis;
 
 
     void Start()
@@ -47,41 +45,41 @@ public class FlockAgent : MonoBehaviour
         framesPassed = 0;
 
         neighborAgents = new List<GameObject>();
-        
-        flockLeader = flockcontroller.leaderPrefab;
+
+        flockParent = flockcontroller.transform;
         speed = flockcontroller.speed;
         flockRadius = flockcontroller.spawnradius;
 
-        velocity = new Vector3(Random.Range(0, 5), 0,Random.Range(0,5));
+        //velocity = new Vector3(Random.Range(0, 5), 0,Random.Range(0,5));
+
+        velocity.x = Random.Range(0, 5);
+        velocity.z = Random.Range(0, 5);
+
+        if (lockYAxis)
+            velocity.y = flockParent.position.y;
+
+        else
+            velocity.y = Random.Range(0, 5);
+
     }
 
-    public void Initialize(List<GameObject> entities, 
-                            FlockManager flockManager, /*Vector3 flockCenter, 
-                            GameObject flockLeader, float speed, float flockRadius,*/
-                            float cohesionWeight, float avoidanceWeight, 
-                            float alignmentWeight, float followWeight, float maintainFlockWeight, bool hasLeader)
+    public void Initialize(List<GameObject> entities, FlockManager flockManager,
+                            float cohesionWeight, float avoidanceWeight,
+                            float alignmentWeight, float maintainFlockWeight, bool lockYAxis)
     {
         flockAgents = entities;
         flockcontroller = flockManager;
-        //this.flockLeader = flockLeader;
-
-        //this.speed = speed;
 
         this.alignmentWeight = alignmentWeight;
         this.cohesionWeight = cohesionWeight;
         this.avoidanceWeight = avoidanceWeight;
-        this.followWeight = followWeight;
         this.maintainFlockWeight = maintainFlockWeight;
 
-        //this.flockCenter = flockCenter;
-        //this.flockRadius = flockRadius;
-
-        this.hasLeader = hasLeader;
+        this.lockYAxis = lockYAxis;
     }
 
     Vector3 Alignment()
     {
-        // Play here
         Vector3 alignmentVelocity = Vector3.zero;
 
         if (flockAgents.Count <= 10)
@@ -94,25 +92,12 @@ public class FlockAgent : MonoBehaviour
 
                     if (distance < 4)
                         alignmentVelocity += flockAgents[i].GetComponent<FlockAgent>().velocity;
-
-                    /*if (hasLeader)
-                    {
-                        float distFromLeader = Vector3.Distance(transform.position, flockLeader.transform.position);
-
-                        if (distFromLeader < flockcontroller.avoidanceradius)
-                            alignmentVelocity += flockLeader.transform.forward;
-                    }*/
                 }
             }
 
             if (flockAgents.Count > 0)
             {
-                /*if (hasLeader)
-                    alignmentVelocity /= flockAgents.Count + 1;
-
-                else*/
-                    alignmentVelocity /= flockAgents.Count;
-
+                alignmentVelocity /= flockAgents.Count;
                 alignmentVelocity.Normalize();
             }
         }
@@ -127,25 +112,12 @@ public class FlockAgent : MonoBehaviour
 
                     if (distance < 4)
                         alignmentVelocity += neighborAgents[i].GetComponent<FlockAgent>().velocity;
-
-                    /*if (hasLeader)
-                    {
-                        float distFromLeader = Vector3.Distance(transform.position, flockLeader.transform.position);
-
-                        if (distFromLeader < flockcontroller.avoidanceradius)
-                            alignmentVelocity += flockLeader.transform.forward;
-                    }*/
                 }
             }
 
             if (neighborAgents.Count > 0)
             {
-                /*if (hasLeader)
-                    alignmentVelocity /= neighborAgents.Count + 1;
-
-                else*/
-                    alignmentVelocity /= neighborAgents.Count;
-
+                alignmentVelocity /= neighborAgents.Count;
                 alignmentVelocity.Normalize();
             }
         }
@@ -155,9 +127,7 @@ public class FlockAgent : MonoBehaviour
 
     Vector3 Cohesion()
     {
-        // Play Here
         Vector3 avgAgentPos = Vector3.zero;
-
 
         if (flockAgents.Count > 10)
         {
@@ -165,20 +135,14 @@ public class FlockAgent : MonoBehaviour
                 avgAgentPos += neighborAgents[i].transform.position;
 
             avgAgentPos /= neighborAgents.Count;
-
-            /*if (hasLeader)
-                avgAgentPos += transform.position - flockLeader.transform.position;*/
         }
 
-        else if(flockAgents.Count <= 10)
+        else if (flockAgents.Count <= 10)
         {
-            for(int i = 0; i < flockAgents.Count; i++)
+            for (int i = 0; i < flockAgents.Count; i++)
                 avgAgentPos += flockAgents[i].transform.position;
 
             avgAgentPos /= flockAgents.Count;
-
-            /*if (hasLeader)
-                avgAgentPos += avgAgentPos / flockAgents.Count + (transform.position - flockLeader.transform.position);*/
         }
 
         //For Testing Only
@@ -205,25 +169,12 @@ public class FlockAgent : MonoBehaviour
 
                     if (distance < flockcontroller.avoidanceradius)
                         avgAvoidanceDir += transform.position - flockAgents[i].transform.position;
-
-                    /*if (hasLeader)
-                    {
-                        float distFromLeader = Vector3.Distance(transform.position, flockLeader.transform.position);
-
-                        if (distFromLeader < flockcontroller.avoidanceradius)
-                            avgAvoidanceDir += transform.position - flockLeader.transform.position;
-                    }*/
                 }
             }
 
             if (flockAgents.Count > 0)
             {
-                /*if (hasLeader)
-                    avgAvoidanceDir /= flockAgents.Count + 1;
-
-                else*/
-                    avgAvoidanceDir /= flockAgents.Count;
-
+                avgAvoidanceDir /= flockAgents.Count;
                 avgAvoidanceDir.Normalize();
             }
         }
@@ -238,25 +189,12 @@ public class FlockAgent : MonoBehaviour
 
                     if (distance < flockcontroller.avoidanceradius)
                         avgAvoidanceDir += transform.position - neighborAgents[i].transform.position;
-
-                    /*if (hasLeader)
-                    {
-                        float distFromLeader = Vector3.Distance(transform.position, flockLeader.transform.position);
-
-                        if (distFromLeader < flockcontroller.avoidanceradius)
-                            avgAvoidanceDir += transform.position - flockLeader.transform.position;
-                    }*/
                 }
             }
 
             if (neighborAgents.Count > 0)
             {
-                /*if (hasLeader)
-                    avgAvoidanceDir /= neighborAgents.Count + 1;
-
-                else*/
-                    avgAvoidanceDir /= neighborAgents.Count;
-
+                avgAvoidanceDir /= neighborAgents.Count;
                 avgAvoidanceDir.Normalize();
             }
         }
@@ -276,7 +214,7 @@ public class FlockAgent : MonoBehaviour
         for (int i = 0; i < flockAgents.Count; i++)
         {
             if (Vector3.Distance(flockAgents[i].transform.position, transform.position) < flockcontroller.neighborRadius)
-                if(flockAgents[i]!=gameObject)
+                if (flockAgents[i] != gameObject)
                     neighborAgents.Add(flockAgents[i]);
         }
     }
@@ -284,7 +222,7 @@ public class FlockAgent : MonoBehaviour
     //Requires work
     Vector3 MaintainFlock()
     {
-        Vector3 centerOffset = flockLeader.transform.position - transform.position;
+        Vector3 centerOffset = flockParent.position - transform.position;
         float t = centerOffset.magnitude / flockRadius;
 
         if (t < 0.9)
@@ -295,32 +233,17 @@ public class FlockAgent : MonoBehaviour
 
     void FlockMovement()
     {
-        //if (Random.Range(0, 5) <= 1)
-        //{
-            cohesion = Cohesion() * cohesionWeight;
-            avoidance = Avoidance() * avoidanceWeight;
-            alignment = Alignment() * alignmentWeight;
+        cohesion = Cohesion() * cohesionWeight;
+        avoidance = Avoidance() * avoidanceWeight;
+        alignment = Alignment() * alignmentWeight;
 
-            stayInFlock = MaintainFlock() * maintainFlockWeight;
+        stayInFlock = MaintainFlock() * maintainFlockWeight;
 
-            /*if (hasLeader)
-            {
-                goalPos = SeekTarget(flockLeader.transform.position) * followWeight;
-                velocity += (alignment + cohesion + avoidance /*+ stayInFlock + goalPos).normalized;
-            }
+        velocity += (alignment + cohesion + avoidance + stayInFlock).normalized;
+        velocity.Normalize();
 
-            else*/
-                velocity += (alignment + cohesion + avoidance + stayInFlock).normalized;
-
-            velocity.Normalize();
-
-        /*var agentRotation = Quaternion.LookRotation(velocity - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, agentRotation, speed * 0.5f * Time.deltaTime);*/
-
-
-            transform.LookAt(velocity);
-            transform.position += velocity * speed * Time.deltaTime;
-        //}
+        //transform.LookAt(velocity);
+        transform.position += velocity * speed * Time.deltaTime;
     }
 
     void Update()
@@ -355,7 +278,7 @@ public class FlockAgent : MonoBehaviour
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawRay(transform.position, alignment);
-        
+
 
         //Gizmos.color = Color.green;
         //Gizmos.DrawRay(transform.position, goalPos);

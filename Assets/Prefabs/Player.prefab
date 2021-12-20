@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673058d4e086ba3458a935508e28c49f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 4710611665491024631}
+  inventory: {fileID: 0}
   damage: 1
 --- !u!1 &4710611665491024639
 GameObject:
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4710611665491024631}
   - component: {fileID: 5389893363470397931}
   - component: {fileID: 999044254}
-  - component: {fileID: 4945578709756525612}
+  - component: {fileID: 1423058665369252934}
   - component: {fileID: 612309345}
   m_Layer: 7
   m_Name: Player
@@ -219,7 +219,7 @@ MonoBehaviour:
   gems: {fileID: 0}
   inventoryObject: {fileID: 0}
   followMouseImage: {fileID: 0}
-  data: {fileID: 612309345}
+  data: {fileID: 0}
   slots:
   - {fileID: 0}
   - {fileID: 0}
@@ -230,7 +230,6 @@ MonoBehaviour:
   highscoreText: {fileID: 0}
   finalHighScore: {fileID: 0}
   healthPickup: []
-  torchfuelPickup: []
   shipfuelPickup: []
   scoreCount: 0
   highScore: 0
@@ -276,7 +275,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   detectionRange: 50
---- !u!114 &4945578709756525612
+--- !u!114 &1423058665369252934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
