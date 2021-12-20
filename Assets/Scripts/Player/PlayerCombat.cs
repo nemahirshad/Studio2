@@ -12,7 +12,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Breakable"))
         {
-            other.gameObject.GetComponent<breakable>().OnBreak();
+            other.gameObject.GetComponent<Breakable>().OnBreak();
             inventory.scoreCount++;
             inventory.UpdateScore();
         }
