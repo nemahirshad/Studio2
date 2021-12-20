@@ -21,8 +21,10 @@ public class Breakable : MonoBehaviour
         Debug.Log("attack");
         if (hasGem == true)
         {
+            Vector3 gemPosOffset = new Vector3(transform.position.x - 2, transform.position.y + 0.3f, transform.position.z - 1);
+
             obj = Instantiate(Gem);
-            obj.transform.position = transform.position;
+            obj.transform.position = gemPosOffset;
             Destroy(gameObject);
         }
         else

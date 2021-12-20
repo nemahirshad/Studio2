@@ -235,8 +235,9 @@ public class Inventory : MonoBehaviour
 
         else if (col.CompareTag("Gem"))
         {
-            gems.value++;
             EndGame();
+            Destroy(col.gameObject);
+            Debug.Log("Gem has been picked up.");
         }
     }
 }
