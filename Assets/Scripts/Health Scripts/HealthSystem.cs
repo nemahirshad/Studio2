@@ -9,11 +9,14 @@ public class HealthSystem : MonoBehaviour
     public int currentHealth;          //Used to show how many hearts a player still has. 
     public int maxHealth;       //Used to set the max no. of hearts a player can have.
 
+    public GameObject player;
+    public GameObject GameOverCam;
     public Image[] hearts;
 
     public int damage;          //This is mostly for testing purposes.
     public int gainHP;
     public GameObject gameOver;
+    public GameObject followMouse;
 
     public PlayerData data;
 
@@ -30,6 +33,8 @@ public class HealthSystem : MonoBehaviour
         //currentHealth = maxHealth;
         //This code might not be necessary if we want the player's HP to carry over from one level to another.
         gameOver.SetActive(false);
+
+        Debug.Log(currentHealth);
     }
 
     void Update()
@@ -82,10 +87,13 @@ public class HealthSystem : MonoBehaviour
     public void PlayerDeath( )
     {
        gameOver.SetActive(true);
+       player.SetActive(false);
+       GameOverCam.SetActive(true);
+       Cursor.lockState = CursorLockMode.Confined;
     }
     public void RespawnButton()
     {
-        SceneManager.LoadScene("SpaceShip");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void MainMenuButton()
     {
