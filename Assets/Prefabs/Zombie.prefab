@@ -99,9 +99,8 @@ MonoBehaviour:
   currentState: 0
   neighbors: []
   anim: {fileID: 1804272296920313677}
-  attackRange: 1
+  attackRange: 2
   chaseRange: 10
-  detectRange: 15
   attackCooldown: 5
   alarmCooldown: 5
   speed: 0.01

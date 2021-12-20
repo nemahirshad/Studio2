@@ -23,15 +23,12 @@ public class ZombieAgent : MonoBehaviour
 
     Transform player;
 
-    EnemyInfo info;
-
     float attackTimer, alarmTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<HealthSystem>().transform;
-        info = GetComponent<EnemyInfo>();
 
         alarmTimer = alarmCooldown;
 	}
@@ -58,6 +55,8 @@ public class ZombieAgent : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
 
                 Vector3 targetDirection = player.position - transform.position;
+
+                targetDirection.y = 0;
                 
                 float singleStep = rotSpeed * Time.deltaTime;
                 

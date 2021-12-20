@@ -19,7 +19,14 @@ public class HealthSystem : MonoBehaviour
 
     void Start()
     {
-        data.LoadPlayerHealth(this);
+        if (SaveSystem.FileFound())
+        {
+            data.LoadPlayerHealth(this);
+        }
+        else
+        {
+            currentHealth = maxHealth;
+        }
         //currentHealth = maxHealth;
         //This code might not be necessary if we want the player's HP to carry over from one level to another.
         gameOver.SetActive(false);

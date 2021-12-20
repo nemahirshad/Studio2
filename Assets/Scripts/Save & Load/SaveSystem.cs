@@ -32,6 +32,19 @@ public static class SaveSystem
             return null;
         }
     }
+
+    public static bool FileFound()
+    {
+        string path = Application.persistentDataPath + "/player.fun";
+
+        if (File.Exists(path))
+        {
+            return true;
+        }
+
+        Debug.LogError("No file exists");
+        return false;
+    }
 }
 
 
