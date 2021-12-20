@@ -13,7 +13,7 @@ namespace Brendan
         private float fNodeDiameter;
         private int gridSizeX, gridSizeY;
         [SerializeField] GridManager[] grids;
-        [SerializeField] Astar[] astarss;
+        [SerializeField] Astar[] astars;
 
 
         Node[,] nodeArray;
@@ -23,7 +23,7 @@ namespace Brendan
         void Awake()
         {
             grids = GameObject.FindObjectsOfType<GridManager>();
-            astarss = GameObject.FindObjectsOfType<Astar>();
+            astars = GameObject.FindObjectsOfType<Astar>();
             fNodeDiameter = fNodeRadius * 2;
             gridSizeX = Mathf.RoundToInt(gridSize.x / fNodeDiameter);
             gridSizeY = Mathf.RoundToInt(gridSize.y / fNodeDiameter);

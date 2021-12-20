@@ -17,11 +17,6 @@ namespace Brendan
             if (Physics.Raycast(startPos.position, endPos.position, out hit, rayDist))
             {
                 Debug.Log(hit.collider.tag);
-                if (hit.collider.tag == "Golem")
-                {
-                    hit.collider.GetComponent<Brendan.Golams_Ai>().OnDeathEffects();
-                    Debug.Log("GOLEM HIT");
-                }
                 if (hit.collider.tag == "Breakable")
                 {
                     hit.collider.GetComponent<Breakable>().OnBreak();

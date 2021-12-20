@@ -101,7 +101,8 @@ namespace Brendan
                 if (waypointAI.TargetReached)
                 {
                     target = null;
-                }  
+                }
+
             }
 
             if (target == null)
@@ -134,19 +135,6 @@ namespace Brendan
             //  anim.SetBool("IsAttacking", true);
         }
 
-        private void OnDeath()
-        {
-            Destroy(gameObject);
-        }
-
-        public void OnDeathEffects()
-        {
-            // Play Particles
-            // Play Sound
-            // Add Score
-            // Switch Animation
-            Destroy(gameObject);
-        }
 
         //private void OnDrawGizmos()
         //{
