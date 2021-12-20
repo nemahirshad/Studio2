@@ -27,7 +27,7 @@ namespace Brendan
                 if (!TargetReached)
                 {
                     float distance = Vector3.Distance(currentRigidbody.position, waypoints[index].worldPosition);
-
+                    // Checks if we've reached the target node within the node list or not.
                     if (distance < minimumDistanceToTarget)
                     {
                         index++;
@@ -39,14 +39,15 @@ namespace Brendan
                             return;
                         }
                     }
-                    // probably here or occuring from the minimumdistancetotarget from the function below
+                    // Calculates direction towards the waypoint we are moving towards.
                     Vector3 direction = (waypoints[index].worldPosition - currentRigidbody.position).normalized;
                     currentRigidbody.AddForce(direction * speed * Time.deltaTime, ForceMode.Impulse);
+                    // calls rotate function to rotate the object.
                     Rotate(direction);
                 }
             }
         }
-
+        // initiates movement by taking the correct parameteres.
         public void MoveTowards(List<Node> waypoints, Rigidbody currentRigidbody, float speed, float minimumDistanceToTarget)
         {
             index = 0;
@@ -58,12 +59,11 @@ namespace Brendan
             this.minimumDistanceToTarget = minimumDistanceToTarget;
         }
 
+        // takes a direction to rotate towards,
         private void Rotate(Vector3 dir)
         {
-           
-           // TargetDir = new Vector3(0, TargetDir.y, 0);
-            //Vector3 newDirection = Vector3.RotateTowards(transform.forward, dir, 0.5f * Time.deltaTime, 0.0f);
             rotationGoal = Quaternion.LookRotation(dir);
+            //using slerp to smoothout the rotation
             transform.rotation = Quaternion.Slerp(transform.rotation, rotationGoal, TurnSpeed);
         }
     }

@@ -12,6 +12,11 @@ public class gemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GemAssignment();
+    }
+
+    private void GemAssignment()
+    {
         gemVases = new List<GameObject>(gemNumber);
 
         for (int i = 0; i < gemNumber; i++)
@@ -19,7 +24,7 @@ public class gemManager : MonoBehaviour
             int Rand = Random.Range(0, vases.Count);
             vases[Rand].GetComponent<Breakable>().hasGem = true;
             gemVases.Add(vases[Rand]);
-            vases.RemoveAt(Rand); 
+            vases.RemoveAt(Rand);
         }
     }
 }

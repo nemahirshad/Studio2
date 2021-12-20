@@ -14,18 +14,12 @@ namespace Brendan
             gridReference = GameObject.FindObjectOfType<GridManager>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            //FindPath(StartPosition.position, TargetPosition.position);
-        }
-
         public void FindPath(Vector3 StartPos, Vector3 targetPos, GameObject AI)
         {
-            //start should be -51, 0, -18
-            //end should be -53, 0, -32
-            Node startNode = gridReference.nodeFromeWorldPoint(StartPos); //worldPosition = "(-85.0, 0.0, -28.0)"
-            Node targetNode = gridReference.nodeFromeWorldPoint(targetPos); //worldPosition = "(-85.0, 0.0, -42.0)"
+            //pases in Start and target position from unity world space.
+            //returns specific nodes that will be used to start calculating path.
+            Node startNode = gridReference.nodeFromeWorldPoint(StartPos);
+            Node targetNode = gridReference.nodeFromeWorldPoint(targetPos);
 
             List<Node> openList = new List<Node>();
             HashSet<Node> closedList = new HashSet<Node>();
@@ -73,7 +67,7 @@ namespace Brendan
             }
 
         }
-
+        // stores the shortest path in the AIPathHolder Script attached to the agent
         void getFinalPath(Node startingNode, Node endNode, GameObject AI)
         {
             List<Node> finalPath = new List<Node>();
@@ -86,9 +80,7 @@ namespace Brendan
             }
 
             finalPath.Reverse();
-            //gridReference.shortestPath = finalPath;
             AI.GetComponent<AIPathHolder>().shortestPath = finalPath;
-            //ShortestPath = finalPath;
         }
 
         int getManhattenDistance(Node nodeA, Node nodeB)

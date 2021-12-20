@@ -108,16 +108,10 @@ namespace Brendan
             if (target == null)
             {
                 getTarget();
-                //target = wayPoints[0];
-
                 astar.FindPath(transform.position, target.transform.position, gameObject);
                 waypointAI.MoveTowards(aiPath.shortestPath, rb, speed, 2.2f);
             }
 
-            //Vector3 direction = (aiPath.shortestPath[0].worldPosition - transform.position).normalized;
-            // rb.AddForce(direction * speed * Time.deltaTime, ForceMode.Impulse);
-
-            //  anim.SetBool("IsWalking", true);
         }
 
         public void Chasing()
@@ -125,8 +119,7 @@ namespace Brendan
             
             astar.FindPath(transform.position, player.transform.position, gameObject);
             waypointAI.MoveTowards(aiPath.shortestPath, rb, speed, 2.2f);
-            //Debug.Log(grid.MovementCalculator(gameObject));
-            //  anim.SetBool("IsWalking", true);
+
         }
 
         public void Attacking()
@@ -134,16 +127,5 @@ namespace Brendan
             attackCol.SetActive(true);
             //  anim.SetBool("IsAttacking", true);
         }
-
-
-        //private void OnDrawGizmos()
-        //{
-        //    if (target)
-        //    {
-        //        Gizmos.color = Color.blue;
-        //        Gizmos.DrawSphere(target.transform.position, 1f);
-        //    }
-
-        //}
     }
 }
