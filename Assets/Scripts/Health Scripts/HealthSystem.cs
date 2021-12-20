@@ -95,8 +95,16 @@ public class HealthSystem : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void MainMenuButton()
+    public void Level2()
     {
-        //SceneManager.LoadScene("Mainmenu");
+        SceneManager.LoadScene("Level 2");
+    }
+    public void Levele3()
+    {
+        SceneManager.LoadScene("Level 3");
+    }
+    public void ReturnToShip()
+    {
+        SceneManager.LoadScene("Return to Ship");
     }
 }
