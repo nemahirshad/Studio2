@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TPController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
 	public float speed = 2.0f;
     public CharacterController controller;
