@@ -10,7 +10,6 @@ public class TutorialManager : MonoBehaviour
     public GameObject firstPopUp;
     private int i;
     private int countForInput;
-    public GameObject jumpObj;
 
     public bool firstRun;
     public bool interacted;
@@ -18,7 +17,6 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
        countForInput = 0;
-       jumpObj.SetActive(false);
     }
 
     public void Update()
@@ -79,7 +77,6 @@ public class TutorialManager : MonoBehaviour
                         {
                             Debug.Log("worgehdks");
                             i++;
-                            jumpObj.SetActive(true);
                         }
                     }
                 }
@@ -87,7 +84,6 @@ public class TutorialManager : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.Return))
                     {
-                        jumpObj.SetActive(false);
                         i++;
                     }
                 }
